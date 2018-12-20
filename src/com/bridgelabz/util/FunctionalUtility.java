@@ -76,12 +76,176 @@ public static void pow(double base,double exp)
 }
 
 
+public void harmonic(double num)
 
-
-
+{
+	 double result=0.0;
+	 for(double i=1;i<=num;i++)
+	 {
+		 result=result+1/i;
+		 
+	 }
+	 System.out.println( result);
 }
 
 
 
 
+
+
+public void primeFactors(int n)
+
+{
+	while(n%2==0)
+	{
+		System.out.println(2+" ");
+		n=n/2;
+	}
+	for(int i=3;i*i<=n;i+=2)
+	{
+		while(n%i==0)
+		{
+			System.out.println(i+" ");
+			n=n/i;
+			
+		}
+	}
+}
+		
+
+public void gambler(int stake,int goal,int n)
+{
+	int wins=0;
+	int loss=0;
+	 for (int t = 0; t < n; t++) 
+	 {
+
+        
+         int cash = stake;
+         while (cash > 0 && cash < goal)
+         {
+          
+             if (Math.random() < 0.5) 
+            	 cash++; 
+             else               
+            	 cash--;    
+         }
+         if (cash == goal)
+        	 wins++;           
+     }
+
+     System.out.println(wins + " wins of " + n);
+     System.out.println("Percent of games wins= " + 100.0 * wins / n);
+     System.out.println("Percent of games loss = " + 100.0 * loss / n);
+}
+
+
+	 public static int collect(int n)
+	 {
+	        boolean[] isCollected = new boolean[n];
+	        int count = 0;                           
+	        int distinct  = 0;   
+	        while(distinct<n)
+	        {
+	        	int value=(int) (Math.random() * n);
+	        	count++;
+	        	if(isCollected[value]==false)
+	        	{
+	        		distinct++;
+	        		System.out.println(distinct);
+	        		isCollected[value]=true;
+	        	}
+	        	
+
+	      
+	        
+	        }
+	        return count;
+	    }
+	 
+	 //
+	 public void sumOfThreeInt(int[] arr,int n)
+ {
+	//boolean found=false;
+		 int count=0;
+	 for(int i=0;i<n-2;i++)
+	 {
+		 for(int j=i+1;j<n-1;j++)
+		 {
+			 for(int k=j+1;k<n;k++)
+			 {
+				 if(arr[i]+arr[j]+arr[k]==0)
+				 {
+					 System.out.println("the output is");
+					 System.out.println(arr[i]+"+"+arr[j]+"+"+arr[k]+"= 0");
+					 count++;
+				 }
+				 
+			 }
+					
+			 }
+		 }
+	 if(count==0)
+	 {
+		 System.out.println("sum of three integers does not add zero");
+		 
+	 }
+}
+ 
+
+//
+public void distance(int x,int y)
+{
+	double result=Math.sqrt(x*x+y*y);
+System.out.println("result is "+result);
+}
+
+
+
+
+public void quadraticEquation(int a,int b,int c)
+{
+	double delta=b*b-4*a*c;
+       double root1 = (- b + Math.sqrt(delta))/(2*a);
+       double root2 = (-b - Math.sqrt(delta))/(2*a);
+       System.out.println("First root is:"+root1);
+       System.out.println("Second root is:"+root2);
+	
+}
+
+
+long startTime=0;
+long stopTime=0;
+
+public void start()
+{
+	startTime=System.currentTimeMillis();
+	System.out.println("the start time is:"+startTime);
+}
+
+
+public void stop()
+{
+	stopTime=System.currentTimeMillis();
+	System.out.println("the stop time is:"+stopTime);
+}
+
+public void getElapsedTime()
+{
+	System.out.println(stopTime-startTime);
+
+	
+	
+	
+	
+	
+}
+
+public void windChill(double t,double v)
+{
+	double w=35.74+0.6215*t+(0.4275*t-35.75)*Math.pow(v,0.16);
+	System.out.println("wind chill:"+w);
+}
+	
+}
 

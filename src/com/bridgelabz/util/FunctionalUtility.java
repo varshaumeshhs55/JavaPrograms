@@ -2,19 +2,22 @@ package com.bridgelabz.util;
 
 import java.util.Random;
 
-public class FunctionalUtility
+public class FunctionalUtility<E>
 {
-	public void replaceString(String s1)
+	public void replaceString(String str,String uname)
 	
 	{
-	if(s1.length()<3)
+	if(uname.length()<3)
 	{
 		System.out.println("enter a name greater than 3 alphabet");
 }
-	else
-		System.out.println("hello "+s1+",how are you");
+	else 
+	{
+		String str2=str.replace("<<UserName>>",uname);
+		System.out.println(str2);
 }
 
+	}
 
 
 
@@ -246,6 +249,22 @@ public void windChill(double t,double v)
 	double w=35.74+0.6215*t+(0.4275*t-35.75)*Math.pow(v,0.16);
 	System.out.println("wind chill:"+w);
 }
-	
-}
 
+
+
+	
+ public void displayArray(E[][] garray)
+ {
+	 for(int i=0;i<garray.length;i++)
+	 {
+		 for(int j=0;j<garray.length;j++)
+		 {
+			 System.out.print(garray[i][j]+"  ");
+		 }
+		 System.out.println();
+	 }
+ }
+ }
+ 
+ 
+ 

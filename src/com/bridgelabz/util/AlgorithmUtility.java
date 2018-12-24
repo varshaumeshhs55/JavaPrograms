@@ -62,40 +62,65 @@ public class AlgorithmUtility {
 	public void monthlyPayment(double p, double r, double y) {
 		double n = 12 * y;
 		double v = r / 12 * 100;
-		double payment = p * v /( 1 - Math.pow(1 + v,- n));
-		System.out.println("the monthly payment is: "+payment);
+		double payment = p * v / (1 - Math.pow(1 + v, -n));
+		System.out.println("the monthly payment is: " + payment);
 	}
 
+	public void sqrt(double c) {
+		double t = c;
+		double epsilon = 1e-15;
+		while (Math.abs(t - c / t) > epsilon * t) {
+			t = (c / t + t) / 2.0;
+		}
 
-public void sqrt(double c)
-{
-	double t=c;
-	double epsilon = 1e-15; 
-	while (Math.abs(t - c/t) > epsilon*t) {
-        t = (c/t + t) / 2.0;
-    }
-   
-    System.out.println(t);
-}
-
-	
+		System.out.println(t);
+	}
 
 // DayOfWeek
-public void dayOfWeek(int date,int month,int year)
-{
-            {
-    int year1= year-(14-month)/12;
-    int x = year1+(year1/4)-(year1/100)+year1/400;
-    int month1 = month+12*((14-month)/12)-2;
-    int date1= (date+x+31*month1/12)%7;
-    //            }
-    String str []= {"Sunday","Monday","Tuesday","wednesday","Thursday","Friday","Sunday"};
-    for(int i=0;i<str.length;i++)
-    {
-        if(i==date1) 
-            System.out.println("the day is"+str[i]);
-    }
-}
-}
-}
+	public void dayOfWeek(int date, int month, int year) {
+		{
+			int year1 = year - (14 - month) / 12;
+			int x = year1 + (year1 / 4) - (year1 / 100) + year1 / 400;
+			int month1 = month + 12 * ((14 - month) / 12) - 2;
+			int date1 = (date + x + 31 * month1 / 12) % 7;
+			// }
+			String str[] = { "Sunday", "Monday", "Tuesday", "wednesday", "Thursday", "Friday", "Sunday" };
+			for (int i = 0; i < str.length; i++) {
+				if (i == date1)
+					System.out.println("the day is " + str[i]);
+			}
+		}
+	}
 
+	public static void toBinary(int n) {
+		int[] binarynum = new int[1000];
+
+		int i = 0;
+		while (n > 0) {
+			binarynum[i] = n % 2;
+			n = n / 2;
+			i++;
+
+		}
+		for (int j = i - 1; j >= 0; j--)
+			System.out.println(+binarynum[j]);
+	}
+
+	public String[] insertionSort(String[] str, int n) {
+		for (int j = 1; j < n; j++) {
+			String key = str[j];
+			int i = j - 1;
+			while (i >= 0 ) {
+				if((str[i].compareTo(key))>0)																						
+				str[i + 1] = str[i];
+				i--;
+				break;
+
+			}
+
+			str[i + 1] = key;
+		}
+
+		return str;
+	}
+}

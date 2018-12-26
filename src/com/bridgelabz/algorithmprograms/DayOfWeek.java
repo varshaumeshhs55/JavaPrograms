@@ -3,12 +3,13 @@ package com.bridgelabz.algorithmprograms;
 import java.util.Scanner;
 
 import com.bridgelabz.util.AlgorithmUtility;
+import com.bridgelabz.util.FunctionalUtility;
 
 public class DayOfWeek {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		AlgorithmUtility au=new AlgorithmUtility();
+		FunctionalUtility fu=new FunctionalUtility();
 		Scanner sc1=new Scanner(System.in); 
 		System.out.println("enter the date");
 		int date=sc1.nextInt();

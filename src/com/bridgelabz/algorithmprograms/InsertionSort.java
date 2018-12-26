@@ -3,6 +3,7 @@ package com.bridgelabz.algorithmprograms;
 import java.util.Scanner;
 
 import com.bridgelabz.util.AlgorithmUtility;
+import com.bridgelabz.util.FunctionalUtility;
 
 public class InsertionSort {
 
@@ -20,7 +21,7 @@ public class InsertionSort {
 	    String str1[]=au.insertionSort(str, n);
 		for(int i=0;i<str.length;i++)
 		{
-			System.out.println("the sorted element is:"+str[i]);
+			System.out.println("the searched element is:"+str[i]);
 				
 			
 		}

@@ -15,7 +15,7 @@ public class Annagram {
 		System.out.println("enter 2st string");
 		String str2=sc1.next();
 		boolean b=au.annagram(str1,str2);
-		if(b==true)
+		if(b)
 		{
 			System.out.println("the two string is an algorithm");
 		}

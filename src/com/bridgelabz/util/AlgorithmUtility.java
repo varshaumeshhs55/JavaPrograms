@@ -363,5 +363,69 @@ public static int[] toNibbleBinary(int n) {
     }
     return binary;
 }
+
+static int i=0;
+static int total=0;
+static int money;
+public  int calculate(int money,int[]notes )
+{
+    int rem;
+    if(money==0)
+    {
+        return -1 ;
+    }
+    else
+    {
+        if(money>=notes[i])
+        {
+            int calNotes =money/notes[i];
+            rem = money%notes[i];
+            money =rem;
+            total += calNotes;
+            System.out.println(notes[i]+   "rs Notes are  " +calNotes );
+        }
+        i++;
+        return calculate(money, notes);
+
+    }
 }
 
+
+public static int binSearch(String [] str,String key)
+{
+    //int n=str.length;
+    int first  = 0;
+    int last   = str.length - 1;
+    int middle = (first + last)/2;
+
+    while( first <= last )
+    {
+      if ( str[middle].compareTo(key)<0 )
+        first = middle + 1;    
+      else if ( str[middle].equalsIgnoreCase(key) )
+      {
+       return middle;
+      }
+      else
+         last = middle - 1;
+
+      middle = (first + last)/2;
+   }
+ return -1;
+}
+public static String []  sort2(String [] str)
+{
+    int len=str.length;
+    for (int i = 0; i < len; i++){
+        for (int j = i+1; j < len; j++) {
+            if (str[i].compareTo(str[j])>0) {
+                String temp;
+                temp=str[i];
+                str[i]=str[j];
+                str[j]=temp;
+            }
+        }
+    }
+    return str;
+}
+}

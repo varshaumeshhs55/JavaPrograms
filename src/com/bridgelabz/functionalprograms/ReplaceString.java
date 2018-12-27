@@ -1,6 +1,15 @@
-//User Input and Replace String Template �Hello <<UserName>>, How are you?�
-/*varsha
-18/12/2018*/
+/******************************************************************************
+ *  Compilation:  javac -d bin ReplaceString.java
+ *  Execution:    java -cp bin com.bridgelabz.functionalprogram.ReplaceString 
+ *  
+ *  Purpose: User Input and Replace String Template “Hello <<UserName>>, How are you?”
+ *  
+ *  @author  Varsha Umesh
+ *  @version 1.0
+ *  @since   18-12-2018
+ *
+ ******************************************************************************/
+
 
 package com.bridgelabz.functionalprograms;
 
@@ -11,6 +20,11 @@ import com.bridgelabz.util.FunctionalUtility;
 
 
 public class ReplaceString {
+	/*
+	* The main function is written to take input from the user and
+	* call replaceString function that replaces the template with user
+	* input
+	*/
 	public static void main(String[] args)
 	{
 		FunctionalUtility fu=new FunctionalUtility();
@@ -18,6 +32,8 @@ public class ReplaceString {
 		String str="Hello <<UserName>>,How are you??";
 		System.out.println("enter uname");
 		String uname=sc1.next();
+		//Method 1- using non-static function of FunctionalUtilty class
+				//of com.bridgelabz.util package
 		fu.replaceString(str,uname);
 		
 	}

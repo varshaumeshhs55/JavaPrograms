@@ -1,13 +1,13 @@
 
 /******************************************************************************
- *  Compilation:  javac -d bin Distance.java
- *  Execution:    java -cp bin com.bridgelabz.functionalprograms.Distance 
+ *  Compilation:  javac -d bin Harmonic.java
+ *  Execution:    java -cp bin com.bridgelabz.functionalprograms.HarmonicNumber 
  *  
- *  Purpose: Determines euclidean distance between two points.
+ *  Purpose: Prints the Nth harmonic number: 1/1 + 1/2 + ... + 1/N
  *  
- *  @author  Varsha Umesh
+ *  @author Varsha Umesh
  *  @version 1.0
- *  @since   19-12-2018
+ *  @since   18-12-2018
  *
  ******************************************************************************/package com.bridgelabz.functionalprograms;
 
@@ -15,24 +15,26 @@ import java.util.Scanner;
 
 import com.bridgelabz.util.FunctionalUtility;
 
-public class Distance {
+public class Harmonic {
 	/*
 	* The main function is written to take input from the user and
-	* call distance function that calculates the euclidean distance
+	* call harmonic function that prints harmonic value
 	*/
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	
-        FunctionalUtility fu=new FunctionalUtility();
+		FunctionalUtility fu=new FunctionalUtility();
 	    Scanner sc1=new Scanner(System.in);
-	  //Reading inputs from the user
-	    System.out.println("enter x");
-        int x=sc1.nextInt();
-        System.out.println("enter y");
-        int y=sc1.nextInt();
+        System.out.println("enter the harmonic value");
+
+		//Reading the input from the user
+        int num=sc1.nextInt();
       //Method 1- using non-static function of FunctionalUtilty class
       		//of com.bridgelabz.util package
-        fu.distance(x,y);
-	}
+        fu.harmonic(num);
+		
 
+	}
 }
+
+ 

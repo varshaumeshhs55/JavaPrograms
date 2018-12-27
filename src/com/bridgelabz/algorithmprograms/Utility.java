@@ -1,3 +1,16 @@
+
+/******************************************************************************
+ *  Compilation:  javac -d bin Utility .java
+ *  Execution:    java -cp bin com.bridgelabz.algorithmprograms.Utility 
+ *  
+ *  Purpose: Search and Sorted the given list and print elapsed time
+ *  		 performance in descending order
+ *  
+ *  @author  Varsha Umesh
+ *  @version 1.0
+ *  @since   22-12-2018
+ *
+ ******************************************************************************/
 package com.bridgelabz.algorithmprograms;
 
 import java.util.Arrays;
@@ -7,6 +20,16 @@ import com.bridgelabz.util.AlgorithmUtility;
 import com.bridgelabz.util.FunctionalUtility;
 
 public class Utility {
+	/*
+	* The main function is written to take input from the user and
+	* call the following functions that sorts the given array:
+	* 	(i)binary search method for integers
+	* 	(ii)binary search method for strings
+	* 	(iii)insertion Sort method for integers
+	* 	(iv)insertion Sort method for strings
+	* 	(v)bubble sort method for integers
+	* 	(vi)bubble sort method for strings
+	*/
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -19,8 +42,10 @@ public class Utility {
 		System.out.println("5:bubble sort for integer");
 		System.out.println("6:bubble sort for string");
 		int c = s.nextInt();
+		//Reading the choice of the user
 		switch (c) {
 		case 1:
+			
 			System.out.println("enter the no of elements");
 			int n = s.nextInt();
 			int arr[] = new int[n];
@@ -31,6 +56,8 @@ public class Utility {
 			System.out.println("enter the search element");
 			int x = s.nextInt();
 			long start_time1=System.nanoTime();
+			//Method 1- using static function of AlgorithmUtility class
+			//of com.bridgelabz.util package
 			int result = au.binarySearch(arr, 0, n - 1, x);
 			long stop_time1=System.nanoTime();
 
@@ -59,6 +86,8 @@ public class Utility {
 	            	System.out.println(str2[i]);
 	            }
 	            long start_time2=System.nanoTime();
+	          //Method 2- using static function of AlgorithmUtility class
+				//of com.bridgelabz.util package
 	            int res=au.binarySearchStr(str2, key);
 	            long stop_time2=System.nanoTime();
 
@@ -81,6 +110,8 @@ public class Utility {
 			        str[i]=s.next();
 				}
 				long start_time3=System.nanoTime();
+				//Method 3- using static function of AlgorithmUtility class
+				//of com.bridgelabz.util package
 			    String str1[]=au.insertionSort(str, nu);
 			    long stop_time3=System.nanoTime();
 			    
@@ -101,6 +132,8 @@ public class Utility {
 			        a[i]=s.nextInt();
 				}
 				long start_time4=System.nanoTime();
+				//Method 4- using static function of AlgorithmUtility class
+				//of com.bridgelabz.util package
 			    int ar1[]=au.insertionSortInteger(a);
 			    long stop_time4=System.nanoTime();
 				for(int i=0;i<a.length;i++)
@@ -126,6 +159,8 @@ public class Utility {
              for(i=0;i<n1;i++) {
                  System.out.println(array[i]);
              }long start_Time5=System.nanoTime();
+           //Method 5- using static function of AlgorithmUtility class
+				//of com.bridgelabz.util package
              int array2[]=au.bubbleSortInteger(array);
              long stop_Time5=System.nanoTime();
              System.out.println("Sorted array list is:");
@@ -146,6 +181,8 @@ public class Utility {
              for(i=0;i<n2;i++) {
              System.out.println(str3[i]);}
              long start_Time6=System.nanoTime();
+           //Method 6- using static function of AlgorithmUtility class
+				//of com.bridgelabz.util package
              au.bubbleSortString(str3);
              long stop_Time6=System.nanoTime();
              System.out.println("Sorted array list is:");

@@ -29,11 +29,11 @@ public class FileBinarySearch {
 		// TODO Auto-generated method stub
 		 
 		    public static void main(String[] args) throws FileNotFoundException {
-	        AlgorithmUtility au=new AlgorithmUtility();
-		        Scanner sc = new Scanner(System.in);
+	        Scanner sc = new Scanner(System.in);
 		        // Get scanner instance
 		        String csvFile = "/home/admin1/Desktop/varsha1.csv";
-		        BufferedReader fileReader = new BufferedReader(new FileReader(csvFile));
+		        
+				BufferedReader fileReader = new BufferedReader(new FileReader(csvFile));
 
 		        // Delimiter used in CSV file
 		        final String DELIMITER = ",";
@@ -44,7 +44,7 @@ public class FileBinarySearch {
 		            while ((line = fileReader.readLine()) != null) {
 		                // Get all tokens available in line
 		                String[] tokens = line.split(DELIMITER);
-		                au.sort2(tokens);
+		                AlgorithmUtility.sort2(tokens);
 //		                for(int i=0;i<tokens.length;i++) {
 //		                    System.out.println(tokens[i]);
 //		                }
@@ -54,7 +54,7 @@ public class FileBinarySearch {
 		                }
 		                System.out.println("enter the key word which has to be searched ");
 		                String key = sc.next();
-		                int i = au.binSearch(tokens, key);
+		                int i = AlgorithmUtility.binSearch(tokens, key);
 		                if (i >= 0) {
 		                    System.out.println(tokens[i] + " is present in " + (i + 1) + " position in the array");
 		                } else
@@ -63,6 +63,8 @@ public class FileBinarySearch {
 		        } catch (Exception e) {
 		            e.printStackTrace();
 		        }
+		        sc.close();
+		        
 //		        finally {
 //		            try {
 //		                fileReader.close();

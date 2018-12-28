@@ -19,25 +19,22 @@ import com.bridgelabz.util.AlgorithmUtility;
 
 public class MonthlyPayment {
 	/*
-	* The main function is written to take input from the user and
-	* call the monthlyPayment() function calculates monthly payment
-	*/
+	 * The main function is written to take input from the user and call the
+	 * monthlyPayment() function calculates monthly payment
+	 */
 
-	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		AlgorithmUtility au=new AlgorithmUtility();
-		Scanner sc1=new Scanner(System.in); 
-		//Reading inputs from user
+		Scanner sc1 = new Scanner(System.in);
+
 		System.out.println("enter principal loan ammount");
-		double p=sc1.nextDouble();
+		double p = sc1.nextDouble();
 		System.out.println("enter percent compound interest");
-		double r=sc1.nextDouble();
+		double r = sc1.nextDouble();
 		System.out.println("enter years to pay off");
-		//Method 1- using static function of AlgorithmUtility class of
-				//com.bridgelabz.util package
-		double y=sc1.nextDouble();
-		au.monthlyPayment(p,r,y);
+
+		double y = sc1.nextDouble();
+		AlgorithmUtility.monthlyPayment(p, r, y);
+		sc1.close();
 	}
 
 }

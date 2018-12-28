@@ -1,23 +1,24 @@
 package com.bridgelabz.util;
 
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FunctionalUtility<E>
 {
-	public void replaceString(String str,String uname)
+	public static String replaceString(String str,String uname)
+	{
+	String message;
+	Pattern p = Pattern.compile("<<UserName>>");
+	Matcher m = p.matcher(str);
+	message=m.replaceAll(uname);
+	return message;
 	
-	{
-	if(uname.length()<3)
-	{
-		System.out.println("enter a name greater than 3 alphabet");
-}
-	else 
-	{
-		String str2=str.replace("<<UserName>>",uname);
-		System.out.println(str2);
+	 
 }
 
-	}
+	 
+	
 
 
 
@@ -75,6 +76,14 @@ public void flipCoin(int num)
 
 public static void pow(double base,double exp)
 {
+	int i=0;
+	int power=1;
+	while(i<=exp)
+	{
+		System.out.println("2^"+i+"="+power);
+		power=power*2;
+		i++;
+	}
 	System.out.println(Math.pow(base, exp));
 }
 
@@ -169,7 +178,7 @@ public void gambler(int stake,int goal,int n)
 	 //
 	 public void sumOfThreeInt(int[] arr,int n)
  {
-	//boolean found=false;
+	boolean found=false;
 		 int count=0;
 	 for(int i=0;i<n-2;i++)
 	 {
@@ -188,7 +197,8 @@ public void gambler(int stake,int goal,int n)
 					
 			 }
 		 }
-	 if(count==0)
+	 System.out.println("total no of possibilities are:"+count);
+	 if(found==false)
 	 {
 		 System.out.println("sum of three integers does not add zero");
 		 

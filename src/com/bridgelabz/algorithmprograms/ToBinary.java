@@ -16,24 +16,21 @@ import java.util.Scanner;
 
 import com.bridgelabz.util.AlgorithmUtility;
 
-
-
 public class ToBinary {
 	/*
-	* The main function is written to take input from the user and
-	* call the toBinary function that converts decimal to binary
-	*/
+	 * The main function is written to take input from the user and call the
+	 * toBinary function that converts decimal to binary
+	 */
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner sc1=new Scanner(System.in); 
+		Scanner sc1 = new Scanner(System.in);
 		System.out.println("enter the decimal number");
-		//Reading the input from the user
-		int n=sc1.nextInt();
-		//Method 1- using static function of AlgorithmUtility class of
-				//com.bridgelabz.util package
-		AlgorithmUtility.toBinary(n);
 
+		int n = sc1.nextInt();
+
+		AlgorithmUtility.toBinary(n);
+		sc1.close();
 	}
 
 }

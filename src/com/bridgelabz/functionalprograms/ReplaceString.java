@@ -32,10 +32,21 @@ public class ReplaceString {
 		String str="Hello <<UserName>>,How are you??";
 		System.out.println("enter uname");
 		String uname=sc1.next();
+		{
+			if(uname.length()<3)
+			{
+				System.out.println("enter a name greater than 3 alphabet");
+		}
+			
+
 		//Method 1- using non-static function of FunctionalUtilty class
 				//of com.bridgelabz.util package
-		fu.replaceString(str,uname);
+		String message=FunctionalUtility.replaceString(str,uname);
+		System.out.println(message);
 		
+		}
 	}
-
 }
+
+
+

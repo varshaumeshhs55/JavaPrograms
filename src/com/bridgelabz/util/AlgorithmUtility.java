@@ -1,13 +1,40 @@
 package com.bridgelabz.util;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 
 
 public class AlgorithmUtility {
+	static Scanner scanner=new Scanner(System.in); //scanner class declaration
+    
+    //method for scanner class of integer type
+    public static int readInteger() {
+          return scanner.nextInt();}
+    
+    //method for scanner class of double type
+    public static double readdouble() {
+                    return scanner.nextDouble();}
+        
+    //method for scanner class of String type
+    public static String readString() {
+                    return scanner.next();}
 
-	public boolean annagram(String str1, String str2) {
+    /**
+	 *Static function to check if the two strings are anagram or not.
+	 * 
+	 * @param str1 the string to be checked for anagram
+	 * @param str2 the string to be checked for anagram
+	 * @return true if the strings are anagram else false
+	 */
+	public static boolean annagram(String str1, String str2) {
 
 		if (str1.length() != str2.length()) {
 			return false;
@@ -26,8 +53,11 @@ public class AlgorithmUtility {
 
 		}
 	}
-
-	public void primeNumber(int num) {
+	/**
+	 *static function to print the prime numbers for the given range
+	 * 
+	 */
+	public static void primeNumber(int num) {
 		for (int i = 2; i < num; i++) {
 			int k = 0;
 			for (int j = 2; j < i; j++) {
@@ -41,7 +71,11 @@ public class AlgorithmUtility {
 				System.out.print(i + "   ");
 		}
 	}
-
+	/**
+	 * static function that converts given temperature from celcius to fahrenheit 
+	 * and vice versa
+	 * 
+	 */
 	float f = 0;
 	float c = 0;
 
@@ -51,6 +85,7 @@ public class AlgorithmUtility {
 		float f = sc1.nextFloat();
 		c = (f - 32) * 5 / 9;
 		System.out.println("temperature in celsius is: " + c);
+		sc1.close();
 	}
 
 	public void convertCToF() {
@@ -59,16 +94,28 @@ public class AlgorithmUtility {
 		float c = sc1.nextFloat();
 		f = (c * 9 / 5) + 32;
 		System.out.println("temperature in Fahrenheit is: " + f);
+		sc1.close();
 	}
-
-	public void monthlyPayment(double p, double r, double y) {
+	/**
+	 * static function that calculates the monthly payment
+	 * 
+	 * @param p the principle amount taken loan 
+	 * @param y the years to pay off
+	 * @param r the interest rate 
+	 * @return monthly payment 
+	 */
+	public static void monthlyPayment(double p, double r, double y) {
 		double n = 12 * y;
 		double v = r / 12 * 100;
 		double payment = p * v / (1 - Math.pow(1 + v, -n));
 		System.out.println("the monthly payment is: " + payment);
 	}
-
-	public void sqrt(double c) {
+	/**
+	 * static function that calculates the square root of a given number
+	 * 
+	 * @param c the number whose square root is to be found
+	 */
+	public static void sqrt(double c) {
 		double t = c;
 		double epsilon = 1e-15;
 		while (Math.abs(t - c / t) > epsilon * t) {
@@ -79,7 +126,7 @@ public class AlgorithmUtility {
 	}
 
 // DayOfWeek
-	public void dayOfWeek(int date, int month, int year) {
+	public static void dayOfWeek(int date, int month, int year) {
 		{
 			int year1 = year - (14 - month) / 12;
 			int x = year1 + (year1 / 4) - (year1 / 100) + year1 / 400;
@@ -108,8 +155,14 @@ public class AlgorithmUtility {
 		for (int j = i - 1; j >= 0; j--)
 			System.out.println(+binarynum[j]);
 	}
-
-	public String[] insertionSort(String[] str, int n) {
+	/**
+	 * static function to sort the given array of strings using insertion sort
+	 * 
+	 * @param str the array of strings that is to be sorted 
+	 * @param n the number of strings to be sorted
+	 * @return array the array of strings that are sorted
+	 */
+	public static String[] insertionSort(String[] str, int n) {
 		for (int j = 1; j < n; j++) {
 			String key = str[j];
 			int i = j - 1;
@@ -126,7 +179,14 @@ public class AlgorithmUtility {
 
 		return str;
 	}
-
+	/**
+	 * static function to merge the sorted arrays obtained from the 
+	 * merge function.
+	 * 
+	 * @param array the array of strings that are needed to be sorted
+	 * @param low the lower bound of the array 
+	 * @param high the higher bound of the array
+	 */
 	public static void mergeSort(String array[], int low, int high) {
 		int n = high - low;
 		if (n <= 1)
@@ -184,7 +244,9 @@ public class AlgorithmUtility {
 		} else {
 			System.exit(0);
 		}
+		rc.close();
 		return middle;
+		
 	}
 
   public int binarySearch(int[] arr, int l, int h, int x) {
@@ -339,7 +401,20 @@ for(int i=0;i<str.length-1;i++)
 }
 return str;
 }
-    
+public static Map<String,Double> mapCall(Map<String,Double> map)
+{
+    Map<String ,Double> sortMap=new LinkedHashMap<>();
+    map.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+    .forEachOrdered(x -> sortMap.put(x.getKey(), x.getValue()));
+    return sortMap;
+   
+}
+/**
+ * static function that used to swap nibble of a byte
+ * 
+ * @param x number number to be swapped
+ * @return integer integer that is swapped
+ */
 
 public static int swapNibbles(int x)
 {
@@ -363,11 +438,17 @@ public static int[] toNibbleBinary(int n) {
     }
     return binary;
 }
+/**
+ * 
+ * @param notes the array of possible notes in integers
+ * @param money the money that you need change for
+ * @return integer the minimum changes needed for the amount entered
+ */
 
 static int i=0;
 static int total=0;
 static int money;
-public  int calculate(int money,int[]notes )
+public int calculate(int money,int[]notes )
 {
     int rem;
     if(money==0)
@@ -427,5 +508,103 @@ public static String []  sort2(String [] str)
         }
     }
     return str;
+}
+
+
+public static List<String> findPrime(int num) {
+    int flag=1;
+    int i;
+    List<String> arr=new ArrayList<>();
+//    int count=0;
+
+    for( i=2;i<=num;i++)
+    {
+        for(int j=2;j<i;j++)
+        {
+            if(i%j==0)
+            {
+                flag=0;
+                break;
+            }
+            else
+                flag=1;
+        }
+        if(flag==1)
+        {
+            arr.add(String.valueOf(i));
+        }
+    }
+    System.out.println(arr);
+    return arr;
+}
+
+// anagram
+
+
+public static Set<String> primeAnagram(List<String> primeList) {
+    Set<String> primeAnagramSet=new HashSet<>();
+    for(int i=0;i<primeList.size();i++)
+    {
+
+        for(int j=i+1;j<primeList.size();j++)
+        {
+            if(AlgorithmUtility.annagram(primeList.get(i), primeList.get(j)))
+            {
+                //                    primeAnagramList.add(Integer.toString(i));
+                primeAnagramSet.add(primeList.get(i));
+                primeAnagramSet.add(primeList.get(j));
+                System.out.println(primeList.get(i)+"    "+primeList.get(j) );
+            }
+        }
+    }
+
+    return primeAnagramSet;
+
+}
+
+//palindrom
+/**
+ * static function that is used to add prime numbers that are 
+ * anagram and palindrom
+ * 
+ * @param set the set of prime numbers that are anagram
+ * @return set the set of prime numbers that are anagram and palindrom
+ */
+public static Set<String> primePalindrome(Set<String> primeAnagramSet)
+{
+    java.util.Iterator<String> iter = primeAnagramSet.iterator();
+    Set<String> resultSet=new HashSet<>();
+
+    String a;
+    while (iter.hasNext())
+    {
+        a=(String) iter.next();
+        int a1=Integer.parseInt(a);
+        int lk=reverse(a1);
+
+        if(primeAnagramSet.contains(Integer.toString(lk)))
+
+        {
+            String b=Integer.toString(lk);
+            resultSet.add(b);
+        }
+
+
+    }
+    return resultSet;
+}
+
+
+public static int reverse(int n)
+{
+
+    int reverse=0;
+    while(n!=0)
+    {
+        reverse = reverse * 10;
+        reverse = reverse + n%10;
+        n = n/10;
+    }
+    return reverse;
 }
 }

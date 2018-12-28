@@ -15,31 +15,25 @@ package com.bridgelabz.algorithmprograms;
 import java.util.Scanner;
 
 import com.bridgelabz.util.AlgorithmUtility;
-import com.bridgelabz.util.FunctionalUtility;
 
 public class DayOfWeek {
 	/*
-	* The main function is written to take input from the user and and 
-	* call the dayOfWeek function that returns the integer 
-	* representation of the week
-	*/
+	 * The main function is written to take input from the user and and call the
+	 * dayOfWeek function that returns the integer representation of the week
+	 */
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		AlgorithmUtility au=new AlgorithmUtility();
 		@SuppressWarnings("resource")
-		Scanner sc1=new Scanner(System.in); 
-		//Reading inputs from the user
-		System.out.println("enter the date");
-		int date=sc1.nextInt();
-		System.out.println("enter the month");
-		int month=sc1.nextInt();
-		System.out.println("enter the year");
-		int year=sc1.nextInt();
+		Scanner sc1 = new Scanner(System.in);
 
-		//Method 1- using static function of AlgorithmUtility class of
-		//com.bridgelabz.util package
-		au.dayOfWeek(date,month,year);
+		System.out.println("enter the date");
+		int date = sc1.nextInt();
+		System.out.println("enter the month");
+		int month = sc1.nextInt();
+		System.out.println("enter the year");
+		int year = sc1.nextInt();
+
+		AlgorithmUtility.dayOfWeek(date, month, year);
 
 	}
 

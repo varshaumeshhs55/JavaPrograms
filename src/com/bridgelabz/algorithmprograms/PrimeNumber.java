@@ -18,19 +18,17 @@ import com.bridgelabz.util.AlgorithmUtility;
 
 public class PrimeNumber {
 	/*
-	* The main function is written to take input from the user and
-	* call the primeNumber() function that finds prime numbers
-	*/
+	 * The main function is written to take input from the user and call the
+	 * primeNumber() function that finds prime numbers
+	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		AlgorithmUtility au=new AlgorithmUtility();
-		Scanner sc1=new Scanner(System.in); 
-		//Reading inputs from user
+		Scanner sc1 = new Scanner(System.in);
+
 		System.out.println("enter the prime number");
-		int num=sc1.nextInt();
-		//Method 1- using static function of AlgorithmUtility class of
-				//com.bridgelabz.util package
-		au.primeNumber(num);
+		int num = sc1.nextInt();
+
+		AlgorithmUtility.primeNumber(num);
+		sc1.close();
 
 	}
 

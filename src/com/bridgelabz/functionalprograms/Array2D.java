@@ -28,14 +28,14 @@ public class Array2D {
 		// TODO Auto-generated method stub
 		FunctionalUtility fu=new FunctionalUtility();
 	    Scanner s = new Scanner(System.in);
-	  //Reading the input from the user
+	 
 	    System.out.print("Enter no of rows: m");
 	    int  m= s.nextInt();
 	    System.out.print("Enter no of columns: n");
 	    int n = s.nextInt();
 	    System.out.print("1:Integer 2:Double 3:boolean");
 	    int c = s.nextInt();
-	  //Reading the choice of the user
+	  
 	    switch(c)
 	    {
 	    case 1:Integer[][] array=new Integer[m][n];
@@ -46,8 +46,7 @@ public class Array2D {
 	        		   array[i][j]=s.nextInt();
 	        	   }
 	           }
-	       	//Method 1- using non-static function of FunctionalUtilty class
-				//of com.bridgelabz.util package
+	      
 	           fu.displayArray(array);
 	           break;
 	           

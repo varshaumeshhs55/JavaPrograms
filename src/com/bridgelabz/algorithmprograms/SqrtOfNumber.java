@@ -18,20 +18,18 @@ import com.bridgelabz.util.AlgorithmUtility;
 
 public class SqrtOfNumber {
 	/*
-	* The main function is written to take input from the user and
-	* call sqrt thefunction that finds square root of a number
-	*/
+	 * The main function is written to take input from the user and call sqrt
+	 * thefunction that finds square root of a number
+	 */
 	public static void main(String[] args) {
-		
-	
-	AlgorithmUtility au=new AlgorithmUtility();
-	Scanner sc1=new Scanner(System.in); 
-	//Reading input from the user
-	System.out.println("enter the number to find its squareroot");
-	//Method 1- using static function of AlgorithmUtility class of
-			//com.bridgelabz.util package
-	double c=sc1.nextDouble();
-	au.sqrt(c);
 
-}
+		Scanner sc1 = new Scanner(System.in);
+
+		System.out.println("enter the number to find its squareroot");
+
+		double c = sc1.nextDouble();
+		AlgorithmUtility.sqrt(c);
+		sc1.close();
+
+	}
 }

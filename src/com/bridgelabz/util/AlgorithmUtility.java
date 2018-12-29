@@ -22,6 +22,14 @@ public class AlgorithmUtility {
     //method for scanner class of double type
     public static double readdouble() {
                     return scanner.nextDouble();}
+    /**
+	 * static function to read boolean input from the user
+	 * @return boolean values that are read
+	 */
+	public static boolean readBoolean(){
+			return scanner.nextBoolean();
+	}
+	
         
     //method for scanner class of String type
     public static String readString() {
@@ -57,6 +65,7 @@ public class AlgorithmUtility {
 	 *static function to print the prime numbers for the given range
 	 * 
 	 */
+	
 	public static void primeNumber(int num) {
 		for (int i = 2; i < num; i++) {
 			int k = 0;
@@ -126,6 +135,14 @@ public class AlgorithmUtility {
 	}
 
 // DayOfWeek
+	/**
+	 * static function that finds the day of the week provided date 
+	 * 
+	 * @param month the numeric representation the of month
+	 * @param date the numeric representation the of date
+	 * @param year the numeric representation the of year
+	 * @return integer the numeric representation of the day 
+	 */
 	public static void dayOfWeek(int date, int month, int year) {
 		{
 			int year1 = year - (14 - month) / 12;
@@ -140,7 +157,12 @@ public class AlgorithmUtility {
 			}
 		}
 	}
-
+	/**
+	 * static function that converts decimal to binary 
+	 * 
+	 * @param num the number that is to be converted to binary
+	 * @return array the array of integers that contains binary bits of the number
+	 */
 	public static void toBinary(int n) {
 		int[] binarynum = new int[1000];
 
@@ -210,43 +232,6 @@ public class AlgorithmUtility {
 		for (int k = 0; k < n; k++) {
 			array[low + k] = temparr[k];
 		}
-	}
-
-	public static int findANumber(int lower, int upper, int middle, int count, String input1, int n) {
-		Scanner rc = new Scanner(System.in);
-		System.out.println("Is your number:" + middle);
-		System.out.println();
-		System.out.println("Enter your answer in 'yes' or 'high' or 'low'");
-		input1 = rc.nextLine();
-		do {
-			if (input1.equals("high")) {
-				lower = middle + 1;
-				count++;
-			} else if (input1.equals("yes")) {
-				System.out.println("The number you thought was: " + middle);
-				int no = count + 1;
-				System.out.println("It takes " + no + " times to find your exact number");
-				break;
-			}
-
-			else if (input1.equals("low")) {
-				upper = middle - 1;
-				count++;
-			}
-			if (count < n) {
-				middle = (lower + upper + 1) / 2;
-				System.out.println("Is your number " + middle + ":");
-				input1 = rc.nextLine();
-			}
-		} while (lower <= upper);
-		if (count > n) {
-			System.out.println("Number not found");
-		} else {
-			System.exit(0);
-		}
-		rc.close();
-		return middle;
-		
 	}
 
   public int binarySearch(int[] arr, int l, int h, int x) {
@@ -540,7 +525,13 @@ public static List<String> findPrime(int num) {
 
 // anagram
 
-
+/**
+ * static function that is used to add prime numbers that are
+ * anagram 
+ * 
+ * @param new_lst the list of prime numbers 
+ * @return set of prime numbers that are anagram
+ */
 public static Set<String> primeAnagram(List<String> primeList) {
     Set<String> primeAnagramSet=new HashSet<>();
     for(int i=0;i<primeList.size();i++)
@@ -607,4 +598,35 @@ public static int reverse(int n)
     }
     return reverse;
 }
+
+/**
+ * static function that finds the number N that is guessed between the 
+ * range of numbers such that the range is 2 to the power of N 
+ * 
+ * @param low the lower bound among the range of the numbers 
+ * @param high the upper bound among the range of the numbers
+ * @return number the number that is guessed among the range of numbers
+ */
+public static int findANumber(int low,int high){
+	int mid=(low+high)/2;
+	if((high-low)==1){
+		System.out.println("Is your number lesser than or equal to "+mid+"? then type true else type false");
+		boolean b=readBoolean();
+		if(b==true)
+			return low;
+		else
+			return high;
+	}
+	do{
+		System.out.println("Is your number greater than or equal to "+mid+"? then type true else type false");
+		boolean b=readBoolean();
+		if(b==false){
+			return findANumber(low,mid);
+		}
+		else{
+			return findANumber(mid+1,high);
+		}
+	}while(low<=high);
 }
+}
+

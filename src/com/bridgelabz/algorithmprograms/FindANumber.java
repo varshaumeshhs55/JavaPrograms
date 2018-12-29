@@ -14,31 +14,29 @@
  ******************************************************************************/
 package com.bridgelabz.algorithmprograms;
 
-import java.util.Scanner;
-
 import com.bridgelabz.util.AlgorithmUtility;
 
 public class FindANumber {
-	/*
-	 * The main function is written to take input from the user and calls
-	 * findANumber function to guess the answer with n questions
-	 */
 
 	public static void main(String[] args) {
-		Scanner sc1 = new Scanner(System.in);
+		/*
+		 * The main function is written to take input from the user and calls
+		 * findANumber function to guess the answer with n questions
+		 */
+		System.out.println("Enter number ");
 
-		System.out.println("Enter any Number:");
-		int n = sc1.nextInt();
-		int range = (int) (Math.pow(2, n));
-		System.out.println("Take number between '0' to " + (range - 1));
-		int count = 0;
-		String input1 = null;
-		int lower = 0;
-		int upper = range;
-		int middle = (lower + upper / 2);
+		// Reading input number from the user
+		int num = AlgorithmUtility.readInteger();
 
-		AlgorithmUtility.findANumber(lower, upper, middle, count, input1, n);
-		sc1.close();
+		int limit = (int) Math.pow(2, num);
+
+		System.out.println("Guess a number between 0 and " + limit);
+
+		// Method 1- using static function of AlgorithmUtility class of
+		// com.bridgelabz.util package
+		int gnum= AlgorithmUtility.findANumber(0, limit);
+
+		System.out.println("Your number is " + gnum);
 	}
 
 }

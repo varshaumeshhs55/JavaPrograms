@@ -24,17 +24,17 @@ public class MonthlyPayment {
 	 */
 
 	public static void main(String[] args) {
-		Scanner sc1 = new Scanner(System.in);
+		String i = args[0];
+		String j = args[1];
+		String k = args[2];
 
-		System.out.println("enter principal loan ammount");
-		double p = sc1.nextDouble();
-		System.out.println("enter percent compound interest");
-		double r = sc1.nextDouble();
-		System.out.println("enter years to pay off");
+		double p = Integer.parseInt(i);
 
-		double y = sc1.nextDouble();
+		double r = Integer.parseInt(j);
+
+		double y = Integer.parseInt(k);
 		AlgorithmUtility.monthlyPayment(p, r, y);
-		sc1.close();
+		
 	}
 
 }

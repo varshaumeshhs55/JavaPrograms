@@ -23,16 +23,15 @@ public class DayOfWeek {
 	 */
 
 	public static void main(String[] args) {
-		@SuppressWarnings("resource")
-		Scanner sc1 = new Scanner(System.in);
+		String i = args[0];
+		String j = args[1];
+		String k = args[2];
 
-		System.out.println("enter the date");
-		int date = sc1.nextInt();
-		System.out.println("enter the month");
-		int month = sc1.nextInt();
-		System.out.println("enter the year");
-		int year = sc1.nextInt();
+		int date = Integer.parseInt(i);
 
+		int month = Integer.parseInt(j);
+
+		int year = Integer.parseInt(k);
 		AlgorithmUtility.dayOfWeek(date, month, year);
 
 	}

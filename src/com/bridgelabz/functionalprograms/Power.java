@@ -25,11 +25,10 @@ public class Power {
 	public static void main(String[] args)
 	{
 		
-		FunctionalUtility fu=new FunctionalUtility();
-		Scanner sc1=new Scanner(System.in);
-	    System.out.println("enter the power value of exponential");
-	  //Reading the input from the user
-	    double exp=sc1.nextDouble();
+		String i=args[0];
+		int exp=Integer.parseInt(i);
+		
+	    
 	    double base=2;
 	    
 	    
@@ -42,7 +41,7 @@ public class Power {
 	    else
 	    	//Method 1- using non-static function of FunctionalUtilty class
 			//of com.bridgelabz.util package
-	    	fu.pow(base, exp);
+	    	FunctionalUtility.pow(base, exp);
 
 	}
 

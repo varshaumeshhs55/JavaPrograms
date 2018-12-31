@@ -24,21 +24,32 @@ public class StopWatch {
 	*/
 	public static void main(String[] args) {
 		
-		FunctionalUtility fu=new FunctionalUtility();
-        Scanner s = new Scanner(System.in);
-	    System.out.println("enter 1 to start");
-	    int  a = s.nextInt();
-	    fu.start();
-		System.out.println("Enter 2 to stop");
-	    int b = s.nextInt();
-	    fu.stop();
-		System.out.println("Enter 3 to getElapsedTime");
-		int c= s.nextInt();
-		//Method 1- using non-static function of FunctionalUtilty class
-				//of com.bridgelabz.util package
-		fu.getElapsedTime();
+		  FunctionalUtility u=new FunctionalUtility();
+	        Scanner sc = new Scanner(System.in);
+
+	        System.out.println("Press any integer to Start Time: ");
+	        sc.nextInt();
+	       
+	        long startTimer=FunctionalUtility.startTime();
+	       
+
+	       
+	        System.out.println("Press any integer to Stop Time: ");
+	        sc.nextInt();
+	       
+	       long stopTimer=FunctionalUtility.stopTime();
+	       System.out.println("Stop Time is: "+stopTimer);
+
+	        //calling the method
+	        long l=FunctionalUtility.elapsedTime(stopTimer,startTimer);
+	   
+	        System.out.println("Total Time Elapsed is:"+(l/1000)+" sec");
+	       
+	       
+	       
+	    }
+	    
 	}
 	
          
-}
 

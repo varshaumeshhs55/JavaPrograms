@@ -23,7 +23,7 @@ public class AnnagramPalindrome {
         //com.bridgelabz.util package
         Set<String> primeAnagramSet=new HashSet<>();//declaration
         System.out.println("The prime numbers which are anagrams are");
-        primeAnagramSet=AlgorithmUtility.primeAnagram((java.util.List<String>) primeList);//method call
+        primeAnagramSet=AlgorithmUtility.primeAnagram(primeList);//method call
 
         //Method 3- using static function of AlgorithmUtility class of
         //com.bridgelabz.util package

@@ -29,10 +29,11 @@ public class VendingMachine {
 		Scanner sc = new Scanner(System.in);
 
 		int money = sc.nextInt();
-		int[] notes = { 2000, 500, 100, 50, 10, 5, 2, 1 };
+		int[] notes = { 1000, 500, 100, 50, 10, 5, 2, 1 };
 		System.out.println("the remaining change should be given to customer is ");
 
-		au.calculate(money, notes);
+		int value=au.calculate(money, notes);
+		System.out.println(+value);
 		sc.close();
 
 	}

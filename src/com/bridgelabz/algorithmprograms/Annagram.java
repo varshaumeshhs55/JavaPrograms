@@ -22,20 +22,19 @@ public class Annagram {
 	 * annagram function that checks anagram of two strings
 	 */
 	public static void main(String[] args) {
+		System.out.println("enter the first string");
+        String s1=AlgorithmUtility.readString();
+        System.out.println("enter the second string");
+        String s2=AlgorithmUtility.readString();
+        boolean b=AlgorithmUtility.annagrams(s1,s2);//function is called to check the conditions
+        if(b)
+        {
+            System.out.println("Strings are anagrams");
+        }
+        else
+            System.out.println("Strings are not anagrams");
 
-		@SuppressWarnings("resource")
-		Scanner sc1 = new Scanner(System.in);
-		System.out.println("enter 1st string");
-		String str1 = sc1.next();
-		System.out.println("enter 2st string");
-		String str2 = sc1.next();
 
-		boolean b = AlgorithmUtility.annagram(str1, str2);
-		if (b) {
-			System.out.println("the two string is an algorithm");
-		} else
-
-			System.out.println("the two string is not an algorithm");
-	}
-
+	
+}
 }

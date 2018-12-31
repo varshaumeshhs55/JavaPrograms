@@ -28,11 +28,11 @@ public class MonthlyPayment {
 		String j = args[1];
 		String k = args[2];
 
-		double p = Integer.parseInt(i);
+		double p = Double.parseDouble(i);
 
-		double r = Integer.parseInt(j);
+		double r = Double.parseDouble(j);
 
-		double y = Integer.parseInt(k);
+		double y = Double.parseDouble(k);
 		AlgorithmUtility.monthlyPayment(p, r, y);
 		
 	}

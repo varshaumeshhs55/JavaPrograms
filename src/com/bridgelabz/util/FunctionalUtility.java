@@ -7,6 +7,28 @@ import java.util.regex.Pattern;
 
 public class FunctionalUtility<E>
 {
+static Scanner scanner=new Scanner(System.in); //scanner class declaration
+    
+    //method for scanner class of integer type
+    public static int readInteger() {
+          return scanner.nextInt();}
+    
+    //method for scanner class of double type
+    public static double readdouble() {
+                    return scanner.nextDouble();}
+    /**
+	 * static function to read boolean input from the user
+	 * @return boolean values that are read
+	 */
+	public static boolean readBoolean(){
+			return scanner.nextBoolean();
+	}
+	
+        
+    //method for scanner class of String type
+    public static String readString() {
+                    return scanner.next();}
+
 	public static String replaceString(String str,String uname)
 	{
 	String message;
@@ -247,34 +269,38 @@ public void quadraticEquation(int a,int b,int c)
 
 
 
-public void start()
-{
-	long startTime = 0;
-	startTime = System.currentTimeMillis();
-	System.out.println("the start time is:"+startTime);
+/**
+ * static function to program a stop watch 
+ * 
+ * @param start_end the boolean value to stop or start the watch
+ * @param end the integer value to end the watch when started
+ */
+// method to find the start time
+public static long startTime() {
+    long startTimer = System.currentTimeMillis();
+    System.out.println("Start Time is: " + startTimer);
+    return startTimer;
+}
+
+//method to find the stop time
+public static long stopTime() {
+    long stopTimer = System.currentTimeMillis();
+
+    return stopTimer;
+}
+
+//method to find the elapsed time
+public static long elapsedTime(long stopTimer, long startTimer) {
+    long elapsed = stopTimer - startTimer;
+    return elapsed;
 }
 
 
-public void stop()
-{
-	long stopTime = 0;
-	 stopTime = System.currentTimeMillis();
-	System.out.println("the stop time is:"+stopTime);
-}
-
-public void getElapsedTime()
-{
-	
-	int stopTime = 0;
-	int startTime = 0;
-	System.out.println(stopTime-startTime);
 
 	
 	
 	
-	
-	
-}
+
 
 public void windChill(double t,double v)
 {

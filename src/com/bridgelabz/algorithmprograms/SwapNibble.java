@@ -39,7 +39,7 @@ public class SwapNibble {
 		for (int j = 7; j >= 0; j--) {
 			System.out.print(d[j]);
 		}
-
+System.out.println();
 		for (int i = 1; i < c; i++) {
 
 			if (Math.pow(2, i) == c)

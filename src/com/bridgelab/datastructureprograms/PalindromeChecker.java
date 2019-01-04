@@ -15,7 +15,7 @@ public class PalindromeChecker {
             char c =string.charAt(i);
             deque.addRear(c);
         }
-        int flag=0;
+        int flag=0; 
 
         while(deque.size()>1)
         {

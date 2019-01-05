@@ -85,7 +85,7 @@ public void flipCoin(int num)
 		if(r1==0)
 			head++;
 		else
-			tail--;
+			tail++;
 		num--;
 	}
 	System.out.println("percentage of head is "+head*100/n);
@@ -175,7 +175,11 @@ public void gambler(int stake,int goal,int n)
             	 cash--;    
          }
          if (cash == goal)
-        	 wins++;           
+         {
+        	 wins++; 
+         }
+         else
+         loss++;
      }
 
      System.out.println(wins + " wins of " + n);

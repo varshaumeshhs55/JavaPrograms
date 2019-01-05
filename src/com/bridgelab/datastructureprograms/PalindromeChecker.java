@@ -7,7 +7,7 @@ import com.bridgelabz.util.Deque;
 
 public class PalindromeChecker {
 	public static void main(String[] args) {
-        Deque<Comparable> deque=new Deque<Comparable>(100);
+        Deque deque=new Deque(100);
       System.out.println("enter the String to check Palindrome­ or not ");
       String string=DataStructureUtility.readString();
       for(int i=0;i<string.length();i++)

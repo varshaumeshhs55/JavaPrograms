@@ -27,9 +27,9 @@ public class AnnagramPalindrome {
 
         //Method 3- using static function of AlgorithmUtility class of
         //com.bridgelabz.util package
-        Set<String> primePalindromeSet=new HashSet<>();//Set declaration
-        System.out.println("The prime numbers which are anagram and palindrome are");
-        primePalindromeSet=AlgorithmUtility.primePalindrome(primeAnagramSet);//method call
+        Set<Integer> primePalindromeSet=new HashSet<>();//Set declaration
+        System.out.println("The prime numbers which palindrome are");
+        primePalindromeSet=AlgorithmUtility.primePalindrome(primeList);//method call
         System.out.println(primePalindromeSet);
 
     }

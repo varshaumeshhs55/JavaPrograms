@@ -158,7 +158,8 @@ public static List<Integer> primeN(int a,int b) {
 	return li1;
 }
 public static Set<Integer> primeAnagram(List<Integer> primeList) {
-        Set<Integer> primeAnagram = new HashSet<>();
+Set<Integer> primeAnagram = new HashSet<>();
+	
         for (int i = 0; i < primeList.size(); i++) {
             for (int j = i+1; j < primeList.size(); j++) {
                 if (AlgorithmUtility.annagrams(String.valueOf(primeList.get(i)), String.valueOf(primeList.get(j)))) {
@@ -217,22 +218,9 @@ System.out.println(" Sun Mon Tue Wed Thu Fri Sat");
 
 /** Get the English name for the month */
 static String getMonthName(int month) {
- String monthName = null;
- switch (month) {
-   case 1: monthName = "January"; break;
-   case 2: monthName = "February"; break;
-   case 3: monthName = "March"; break;
-   case 4: monthName = "April"; break;
-   case 5: monthName = "May"; break;
-   case 6: monthName = "June"; break;
-   case 7: monthName = "July"; break;
-   case 8: monthName = "August"; break;
-   case 9: monthName = "September"; break;
-   case 10: monthName = "October"; break;
-   case 11: monthName = "November"; break;
-   case 12: monthName = "December";
- }
- return monthName;
+//	month--;
+ String mnth[]= {"","jan","feb","march","april","may","june","july","august","september","oct","novem","dec"};
+ return mnth[month];
 }
 
 /** Print month body */
@@ -309,5 +297,172 @@ static int getNumberOfDaysInMonth(int year, int month) {
 static boolean isLeapYear(int year) {
  return year % 400 == 0 || (year % 4 == 0 && year % 100 != 0);
 }
+
+public static CustQueue AnagramPrime(List<Integer> primeList) {
+//  Set<Integer> primeAnagram = new HashSet<>();
+CustQueue q=new CustQueue(1000);
+  for (int i = 0; i < primeList.size(); i++) {
+      for (int j = i+1; j < primeList.size(); j++) {
+          if (AlgorithmUtility.annagrams(String.valueOf(primeList.get(i)), String.valueOf(primeList.get(j)))) {
+              q.insert(primeList.get(i));
+              q.insert(primeList.get(j));
+          }
+      }
+  }
+  return q;
 }
 
+public static DataStructureUtility readFile(DataStructureUtility list)
+{
+    System.out.println("Enter the path of the file");
+    String csvFile = readString();
+    //String csvFile="/home/admin1/Desktop/Files/example.txt";
+    String line = " ";
+    String name[]=new String[1000];
+    try (BufferedReader br = new BufferedReader(new FileReader(csvFile)))
+    {
+        while ((line = br.readLine()) != null)
+        {
+            name = line.split(" ");
+            for(int i=0;i<name.length;i++){
+                String name1=name[i];
+                insert(list, name1);               
+            }
+        }
+    }
+    catch (IOException e) {
+        e.printStackTrace();
+    }
+    System.out.println(list);
+    return list;
+}
+
+public static void printList1(DataStructureUtility list)
+{
+    Node currNode = list.head;
+    System.out.print("LinkedList: ");
+    while (currNode != null) {
+        if(currNode.data!=null)
+            System.out.println(currNode.data + " ");
+        currNode = currNode.next;
+    }
+}
+
+public static int delete1(DataStructureUtility list,String key)
+{
+    int flag=0;
+    Node currNode = list.head;       
+    while(currNode != null)
+    {
+        if(currNode.data!=null)
+        {
+            if((currNode.data).compareToIgnoreCase(key)==0) {
+                currNode.data=null;   
+                System.out.println("entered "+key+" found and deleted");
+                flag=1;       
+            }
+        }
+        currNode = currNode.next;
+    }
+
+    return flag;           
+}
+
+public static DataStructureUtility insert1(DataStructureUtility list, String str)
+{
+    // Create a new node with given data
+    Node new_node = new Node(str);
+    //new_node.next = null;
+    if (list.head == null) {
+        list.head = new_node;
+    }
+    else {
+        Node last = list.head;
+        while (last.next != null) {
+            last = last.next;
+        }
+        last.next = new_node;
+    }
+    return list;
+}
+
+public static int[] toIntConv(DataStructureUtility list)
+{
+    int kz=0;
+    Node currNode = list.head;
+    int i=0;
+    int[] str =new int[1000];
+    while (currNode != null) {
+        if(currNode.data!=null)    {
+            kz=Integer.parseInt(currNode.data);
+            str[i]=kz;
+            i++;
+
+        }
+        currNode = currNode.next;
+    }
+    return str;
+}
+
+public static int[] stringSort(int[] myArray) {
+    for(int i = 0; i<myArray.length-1; i++) {
+        for (int j = i+1; j<myArray.length-1; j++) {
+            if(myArray[i]!=0 && myArray[j]!=0 ) {
+                if(myArray[i]>myArray[j]){
+                    int temp = myArray[i];
+                    myArray[i] = myArray[j];
+                    myArray[j] = temp;
+                }
+            }
+        }
+    }
+    return myArray;
+}
+
+public static String[] intTostring(int[] abc) {
+    String strarray[]=new String[abc.length];
+    int l=0;
+    for(int i=0;i<abc.length;i++) {
+        if(abc[i]!=0) {
+        String str=String.valueOf(abc[i]);
+        strarray[l]=str;
+        l++;
+    }}
+    return strarray;
+}
+
+
+public static void usingFileWriter(DataStructureUtility list,String[] fileContent,String path) throws IOException
+{
+    //String[] fileContent = DataStructureUtility.toStrinConv(list);
+    FileWriter fileWriter = new FileWriter(path);   
+    for(String s:fileContent)
+    {
+        if(s!=null) {
+            fileWriter.write(s);
+            fileWriter.write(" ");
+        }
+    }
+    fileWriter.close();
+}
+
+public static void dispFile1( String fname)
+{
+    String line = null;
+    try
+    {
+        FileReader fileReader = new FileReader(fname);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        while((line = bufferedReader.readLine()) != null)
+        {
+            System.out.println(line);
+        }
+        bufferedReader.close();
+    }
+    catch(IOException ex)
+    {
+        System.out.println("Error reading file named '" + fname + "'");
+    }
+}
+
+}

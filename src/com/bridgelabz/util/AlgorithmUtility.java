@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -547,37 +548,62 @@ public class AlgorithmUtility {
 	 * @param set the set of prime numbers that are anagram
 	 * @return set the set of prime numbers that are anagram and palindrom
 	 */
-	public static Set<String> primePalindrome(Set<String> primeAnagramSet) {
-		java.util.Iterator<String> iter = primeAnagramSet.iterator();
-		Set<String> resultSet = new HashSet<>();
+//	public static Set<String> primePalindrome(Set<String> primeAnagramSet) {
+//		java.util.Iterator<String> iter = primeAnagramSet.iterator();
+//		Set<String> resultSet = new HashSet<>();
+//
+//		String a;
+//		while (iter.hasNext()) {
+//			a = (String) iter.next();
+//			int a1 = Integer.parseInt(a);
+//			int lk = reverse(a1);
+//
+//			if (primeAnagramSet.contains(Integer.toString(lk)))
+//
+//			{
+//				String b = Integer.toString(lk);
+//				resultSet.add(b);
+//			}
+//
+//		}
+//		return resultSet;
+//	}
+//
+//	public static int reverse(int n) {
+//
+//		int reverse = 0;
+//		while (n != 0) {
+//			reverse = reverse * 10;
+//			reverse = reverse + n % 10;
+//			n = n / 10;
+//		}
+//		return reverse;
+//	}
+	public static Set<Integer> primePalindrome(List<String> arr) {
+        Set<Integer> pal_set=new HashSet<>();
+        Iterator<String> itr=arr.iterator();
+        while(itr.hasNext()){
+            String num=itr.next();
+            if(isPalindrom(String.valueOf(num))){
+                pal_set.add(Integer.valueOf(num));
+            }
+        }
+        return pal_set;
+    }
+    public static boolean isPalindrom(String str){
+        String new_str="";
+        char[] array=str.toCharArray();
+        for(int i=0;i<array.length;i++)
+        {
+            new_str=array[i]+new_str;
+        }
+        if(str.equals(new_str))
+            return true;
+        else
+            return false;
+    }
 
-		String a;
-		while (iter.hasNext()) {
-			a = (String) iter.next();
-			int a1 = Integer.parseInt(a);
-			int lk = reverse(a1);
-
-			if (primeAnagramSet.contains(Integer.toString(lk)))
-
-			{
-				String b = Integer.toString(lk);
-				resultSet.add(b);
-			}
-
-		}
-		return resultSet;
-	}
-
-	public static int reverse(int n) {
-
-		int reverse = 0;
-		while (n != 0) {
-			reverse = reverse * 10;
-			reverse = reverse + n % 10;
-			n = n / 10;
-		}
-		return reverse;
-	}
+	
 
 	/**
 	 * static function that finds the number N that is guessed between the range of
@@ -607,4 +633,5 @@ public class AlgorithmUtility {
 			}
 		} while (low <= high);
 	}
+
 }

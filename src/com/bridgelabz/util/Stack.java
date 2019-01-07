@@ -1,7 +1,7 @@
-package com.bridgelab.datastructureprograms;
+package com.bridgelabz.util;
 
 public class Stack {
-	
+
         static int top=-1;
         static char items[] = new char[100];
 
@@ -34,7 +34,7 @@ public class Stack {
             return 0;
         }
 
-        boolean isEmpty()
+        public boolean isEmpty()
         {
             return (top == -1) ? true : false;
         }
@@ -91,6 +91,9 @@ public class Stack {
              /*not balanced*/
                 return false;
 
-        
+        }
 
-}}
+        }
+
+
+

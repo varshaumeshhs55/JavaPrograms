@@ -1,3 +1,16 @@
+
+/******************************************************************************
+ *  Compilation:  javac -d bin PrintCalendar.java
+ *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.PrintCalendar n
+ *  
+ *  Purpose: �> Takes the month and year as command�line arguments and 
+ *  			prints the Calendar of the month.
+ *
+ *  @author  Varsha Umesh
+ *  @version 1.0
+ *  @since   05-01-2019
+ *
+ ******************************************************************************/
 package com.bridgelab.datastructureprograms;
 
 import java.util.Scanner;
@@ -5,8 +18,11 @@ import java.util.Scanner;
 import com.bridgelabz.util.DataStructureUtility;
 
 public class PrintCalendar {
-
-	     /** Main method */
+	/*
+	* The main function is written to take input from the user
+	* and print the calendar
+	*/
+	   
 
 	     public static void main(String[] args) {
 	     Scanner scan = new Scanner (System.in);

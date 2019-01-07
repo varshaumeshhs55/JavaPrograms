@@ -1,3 +1,17 @@
+/******************************************************************************
+ *  Compilation:  javac -d bin UnorderedList.java
+ *  Execution:    java -cp bin com.bridgelabz.datastructureprograms.UnorderedList n
+ *  
+ *  Purpose: Reads the text from a file, split it into words and arrange it as Linked List.
+ *  		 Takes a user input to search a Word in the List. If the Word is not found then 
+ *  		 add it to the list, and if it found then remove the word from the List.
+ *  		 In the end save the list into a file
+ *
+ *  @author  Varsha Umesh
+ *  @version 1.0
+ *  @since   02-01-2019
+ *
+ ******************************************************************************/
 package com.bridgelab.datastructureprograms;
 
 import java.io.BufferedReader;
@@ -10,7 +24,11 @@ import com.bridgelabz.util.DataStructureUtility;
 public class UnOrderedlist
 { 
 	public static void main(String[] args) throws FileNotFoundException
-{int v=0;
+{
+		/*
+		* The main function is read a file and add to customized linked 
+		* list to find the searched word
+		*/int v=0;
     String csvFile = "/home/admin1/Desktop/vasa.txt";
     String line = "";
     DataStructureUtility Li=new DataStructureUtility();

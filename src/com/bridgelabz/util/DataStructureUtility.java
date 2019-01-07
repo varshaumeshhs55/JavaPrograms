@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.Stack;
+
 
 public class DataStructureUtility {
 	Node head; // head of list
@@ -294,7 +294,7 @@ static int getNumberOfDaysInMonth(int year, int month) {
 }
 
 /** Determine if it is a leap year */
-static boolean isLeapYear(int year) {
+public static boolean isLeapYear(int year) {
  return year % 400 == 0 || (year % 4 == 0 && year % 100 != 0);
 }
 
@@ -465,4 +465,40 @@ public static void dispFile1( String fname)
     }
 }
 
+
+public static MyGenericsStack AnagramPrime1(List<Integer> primeList) {
+//  Set<Integer> primeAnagram = new HashSet<>();
+MyGenericsStack stack=new MyGenericsStack (1000);
+  for (int i = 0; i < primeList.size(); i++) {
+      for (int j = i+1; j < primeList.size(); j++) {
+          if (AlgorithmUtility.annagrams(String.valueOf(primeList.get(i)), String.valueOf(primeList.get(j)))) {
+              stack.push(primeList.get(i));
+              stack.push(primeList.get(j));
+          }
+      }
+  }
+  return stack;
 }
+
+//public static int day(int month, int i, int year)
+//{
+//int y = year - (14 - month) / 12;
+//int x = y + y/4 - y/100 + y/400;
+//int m = month + 12 * ((14 - month) / 12) - 2;
+//int d = (i + x + (31*m)/12) % 7;
+//return d;
+//}
+
+public static boolean isLeapYear1(int year)
+{
+        if  (((year % 4 == 0) && (year % 100 != 0))||year % 400 == 0) return true;
+        else return false;
+}
+public static int day(int month, int i, int year) {
+	int y = year - (14 - month) / 12;
+	int x = y + y/4 - y/100 + y/400;
+	int m = month + 12 * ((14 - month) / 12) - 2;
+	int d = (i + x + (31*m)/12) % 7;
+	return d;
+}}
+

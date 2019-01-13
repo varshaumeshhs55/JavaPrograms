@@ -501,4 +501,3 @@ public static int day(int month, int i, int year) {
 	int d = (i + x + (31*m)/12) % 7;
 	return d;
 }}
-

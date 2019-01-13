@@ -1,169 +1,285 @@
 package com.bridgelabz.util;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.util.Scanner;
 
-import com.bridgelabz.util.DataStructureUtility.Node;
+public class LinkedList<T> {
+	
+	
 
-public class LinkedList {
-	public static DataStructureUtility readFile(DataStructureUtility list)
-	{
-	    System.out.println("Enter the path of the file");
-	    String csvFile = readString();
-	    //String csvFile="/home/admin1/Desktop/Files/example.txt";
-	    String line = " ";
-	    String name[]=new String[1000];
-	    try (BufferedReader br = new BufferedReader(new FileReader(csvFile)))
-	    {
-	        while ((line = br.readLine()) != null)
-	        {
-	            name = line.split(" ");
-	            for(int i=0;i<name.length;i++){
-	                String name1=name[i];
-	                insert1(list, name1);               
+	    private NewNode<T> first;
+	    private NewNode<T> last;
+
+	    public boolean isEmpty(){
+	        return first==null;
+	    }
+	    public void add(T t) {
+
+	    	 NewNode<T> nd = new  NewNode<T>();
+	        nd.setValue(t);
+	        if (first == null) {
+	            first = nd;
+	            last = nd;
+	        } else {
+	            last.setNextRef(nd);
+	            last = nd;
+	        }
+	    }
+
+	    public int print() {
+
+	    	 NewNode<T> tmp = first;
+	        int i = 0;
+	        while (true) {
+	            if (tmp == null) {
+	                break;
 	            }
-	        }
-	    }
-	    catch (IOException e) {
-	        e.printStackTrace();
-	    }
-	    System.out.println(list);
-	    return list;
-	}
-
-	private static String readString() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public static void printList1(DataStructureUtility list)
-	{
-	    Node currNode = list.head;
-	    System.out.print("LinkedList: ");
-	    while (currNode != null) {
-	        if(currNode.data!=null)
-	            System.out.println(currNode.data + " ");
-	        currNode = currNode.next;
-	    }
-	}
-
-	public static int delete1(DataStructureUtility list,String key)
-	{
-	    int flag=0;
-	    Node currNode = list.head;       
-	    while(currNode != null)
-	    {
-	        if(currNode.data!=null)
-	        {
-	            if((currNode.data).compareToIgnoreCase(key)==0) {
-	                currNode.data=null;   
-	                System.out.println("entered "+key+" found and deleted");
-	                flag=1;       
+	            if(tmp.getValue()!=null)
+	            {
+	                System.out.println(tmp.getValue());
+	                i++;
 	            }
+	            tmp = tmp.getNextRef();
 	        }
-	        currNode = currNode.next;
+	        return i;
 	    }
+	    public void clear() {
 
-	    return flag;           
-	}
-
-	public static DataStructureUtility insert1(DataStructureUtility list, String str)
-	{
-	    // Create a new node with given data
-	    Node new_node = new Node(str);
-	    //new_node.next = null;
-	    if (list.head == null) {
-	        list.head = new_node;
-	    }
-	    else {
-	        Node last = list.head;
-	        while (last.next != null) {
-	            last = last.next;
-	        }
-	        last.next = new_node;
-	    }
-	    return list;
-	}
-
-	public static int[] toIntConv(DataStructureUtility list)
-	{
-	    int kz=0;
-	    Node currNode = list.head;
-	    int i=0;
-	    int[] str =new int[1000];
-	    while (currNode != null) {
-	        if(currNode.data!=null)    {
-	            kz=Integer.parseInt(currNode.data);
-	            str[i]=kz;
-	            i++;
-
-	        }
-	        currNode = currNode.next;
-	    }
-	    return str;
-	}
-
-	public static int[] stringSort(int[] myArray) {
-	    for(int i = 0; i<myArray.length-1; i++) {
-	        for (int j = i+1; j<myArray.length-1; j++) {
-	            if(myArray[i]!=0 && myArray[j]!=0 ) {
-	                if(myArray[i]>myArray[j]){
-	                    int temp = myArray[i];
-	                    myArray[i] = myArray[j];
-	                    myArray[j] = temp;
-	                }
+	    	 NewNode<T> tmp = first;
+	        while (true) {
+	            if (tmp == null) {
+	                break;
 	            }
+	            if(tmp.getValue()!=null)
+	            {
+	                tmp.setValue(null);
+	            }
+	            tmp = tmp.getNextRef();
 	        }
 	    }
-	    return myArray;
-	}
+	    public void printNew() {
 
-	public static String[] intTostring(int[] abc) {
-	    String strarray[]=new String[abc.length];
-	    int l=0;
-	    for(int i=0;i<abc.length;i++) {
-	        if(abc[i]!=0) {
-	        String str=String.valueOf(abc[i]);
-	        strarray[l]=str;
-	        l++;
-	    }}
-	    return strarray;
-	}
-
-
-	public static void usingFileWriter(DataStructureUtility list,String[] fileContent,String path) throws IOException
-	{
-	    //String[] fileContent = DataStructureUtility.toStrinConv(list);
-	    FileWriter fileWriter = new FileWriter(path);   
-	    for(String s:fileContent)
-	    {
-	        if(s!=null) {
-	            fileWriter.write(s);
-	            fileWriter.write(" ");
+	    	 NewNode<T> tmp = first;
+	        while (true) {
+	            if (tmp == null) {
+	                break;
+	            }
+	            if(tmp.getValue()!=null)
+	            {
+	                System.out.print(tmp.getValue()+" ");
+	            }
+	            tmp = tmp.getNextRef();
 	        }
 	    }
-	    fileWriter.close();
-	}
+	    public LinkedList<Integer> getValue() {
 
-	public static void dispFile1( String fname)
-	{
-	    String line = null;
-	    try
+	    	 NewNode<T> tmp = first;
+	        LinkedList<Integer> node=new LinkedList<Integer>();
+	        while (true) {
+	            if (tmp == null) {
+	                break;
+	            }
+	            if(tmp.getValue()!=null)
+	            {
+	                node.add((Integer) tmp.getValue());
+	            }
+	            tmp = tmp.getNextRef();
+	        }
+	        return node;
+	    }
+	    public int size() {
+
+	    	 NewNode<T> tmp = first;
+	        int i = 0;
+	        while (true) {
+	            if (tmp == null) {
+	                break;
+	            }
+	            if(tmp.getValue()!=null)
+	            {
+	                i++;
+	            }
+	            tmp = tmp.getNextRef();
+	        }
+	        return i;
+	    }
+
+	    public boolean printValue(int length, String key, LinkedList<String> li) {
+	    	 NewNode<T> nd2 = first;
+	        while (true) {
+	            if (nd2 == null) {
+	                break;
+	            }
+	            if (key.compareToIgnoreCase(String.valueOf(nd2.getValue())) == 0) {
+	                //                    int index=li.index(key);
+	                //                    li.remove(index);
+	                nd2.setValue(null);
+	                return true;
+	            }
+	            nd2 = nd2.getNextRef();
+	        }
+	        li.add(key);
+	        li.print();
+	        return false;
+	    }
+	    public int index(T data){
+	    	 NewNode<T> curr=first;
+	        int count=0;
+	        while(curr!=null){
+	            if((String.valueOf(curr.getValue())).compareToIgnoreCase(String.valueOf(data))==0){
+	                curr.getNextRef();
+	                return count;
+	            }
+	            count++;
+	            curr=curr.getNextRef();
+	        }
+	        assert(false);
+	        return 0;
+	    }
+
+	    public void remove(int index){
+	        if(isEmpty())
+	            return;
+	        NewNode<T> temp=first;
+	        if(index==0){
+	            first=temp.getNextRef();
+	            return;
+	        }
+	        for(int i=0;temp!=null && i<index-1;i++){
+	            temp=temp.getNextRef();
+	        }
+	        if (temp == null || temp.getNextRef() == null)
+	            return;
+	        @SuppressWarnings("unused")
+	        NewNode<T> next = temp.getNextRef().getNextRef();
+
+	        next=temp.getNextRef();
+	    }
+	    public int [] convInteger(LinkedList<Integer> li,int len)
 	    {
-	        FileReader fileReader = new FileReader(fname);
-	        BufferedReader bufferedReader = new BufferedReader(fileReader);
-	        while((line = bufferedReader.readLine()) != null)
+	    	 NewNode<Integer> nd2 = li.first;
+	        int [] arr=new int[len];
+	        int i=0;
+	        while (true) {
+	            if (nd2 == null) {
+	                break;
+	            }
+	            if(nd2.getValue()!=null)
+	            {
+	                arr[i++]=(int) nd2.getValue();
+	                //                    i++;
+	            }
+	            nd2 = nd2.getNextRef();
+	        }
+	        return arr;
+	    }
+
+	    public int[] sortArray(int [] arr) {
+	        int length = arr.length;
+	        for (int i = 1; i < length; i++) {
+	            int key = arr[i];
+	            int j = i - 1;
+	            while (j >= 0 && arr[j]>key) {
+	                arr[j + 1] = arr[j];
+	                j--;
+	            }
+	            arr[j + 1] = key;
+	        }
+	        return arr;
+	    }
+
+	    public boolean findIntegerValue(int length, int key, LinkedList<Integer> li2) {
+	    	 NewNode<T> nd2 = first;
+	        while (true) {
+	            if (nd2 == null) {
+	                break;
+	            }
+	            if (String.valueOf(key).compareToIgnoreCase(String.valueOf(nd2.getValue())) == 0)
+	            {
+	                nd2.setValue(null);
+	                return true;
+	            }
+	            nd2 = nd2.getNextRef();
+	        }
+	        li2.add(key);
+	        length=li2.size();
+	        int [] arr=li2.convInteger(li2,length);
+	        int [] arr2=li2.sortArray(arr);
+	        System.out.println("after sorting:");
+	        li2.clear();
+	        for(int i:arr2)
 	        {
-	            System.out.println(line);
+	            li2.add(i);
 	        }
-	        bufferedReader.close();
-	    }
-	    catch(IOException ex)
-	    {
-	        System.out.println("Error reading file named '" + fname + "'");
-	    }
-	}
+	        return false;
 
+	    }
+	    public boolean search(T key){
+	    	 NewNode<T> temp=first;
+	        while(temp.getNextRef()!=null){
+	            if( String.valueOf(key).compareToIgnoreCase(String.valueOf(temp.getValue())) == 0){
+	                return true;
+	            }
+	            temp=temp.getNextRef();
+	        }
+	        return false;
+	    }
+
+	    public String [] convString(LinkedList<T> li,int len)
+	    {
+	    	 NewNode<T> nd2 = li.first;
+	        String [] str=new String[len];
+	        int i=0;
+	        while (true) {
+	            if (nd2 == null) {
+	                break;
+	            }
+	            if(nd2.getValue()!=null)
+	            {
+	                str[i++]=(String) nd2.getValue();
+	                //                    i++;
+	            }
+	            nd2 = nd2.getNextRef();
+	        }
+	        return str;
+	    }
+	    public int [] convertInt(LinkedList<Integer> li,int len)
+	    {
+	    	 NewNode<Integer> nd2 = li.first;
+	        int [] str=new int[len];
+	        int i=0;
+	        while (true) {
+	            if (nd2 == null) {
+	                break;
+	            }
+	            if(nd2.getValue()!=null)
+	            {
+	                str[i++]=(Integer) nd2.getValue();
+	                //                    i++;
+	            }
+	            nd2 = nd2.getNextRef();
+	        }
+	        return str;
+	    }
+
+static Scanner scanner=new Scanner(System.in); //scanner class declaration
+
+//method for scanner class of integer type
+public static int readInteger() {
+      return scanner.nextInt();}
+
+//method for scanner class of double type
+public static double readdouble() {
+                return scanner.nextDouble();}
+/**
+ * static function to read boolean input from the user
+ * @return boolean values that are read
+ */
+public static boolean readBoolean(){
+		return scanner.nextBoolean();
+}
+
+    
+//method for scanner class of String type
+public static String readString() {
+                return scanner.next();}
 }

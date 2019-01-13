@@ -16,7 +16,7 @@ package com.bridgelabz.util;
 
 class NewNode<T> {
     private T value;
-    private NewNode<T> nextRef;
+    NewNode<T> nextRef;
     /**
 	 * Constructors to initialize the instance variables
 	 */

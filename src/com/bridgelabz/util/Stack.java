@@ -5,6 +5,11 @@ public class Stack {
         static int top=-1;
         static char items[] = new char[100];
 
+      
+        /**
+         * @param x
+         * @return
+         */
         public static char  push(char x)
         {
             if (top == 99)

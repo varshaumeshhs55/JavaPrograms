@@ -5,14 +5,15 @@ public class MyGenericsStack<T extends Object> {
     private int stackSize;
     private T[] stackArr;
     private int top;
+    private int size=0;
      
     /**
      * constructor to create stack with size
      * @param size
      */
     @SuppressWarnings("unchecked")
-    public MyGenericsStack(int size) {
-        this.stackSize = size;
+    public MyGenericsStack(int s) {
+        this.stackSize = s;
         this.stackArr = (T[]) new Object[stackSize];
         this.top = -1;
     }
@@ -28,10 +29,15 @@ public class MyGenericsStack<T extends Object> {
             System.out.println(("Stack is full. Increasing the capacity."));
             this.increaseStackCapacity();
         }
-        System.out.println("Adding: "+entry);
+       
         this.stackArr[++top] = entry;
+        size++;
+        
     }
- 
+ public int size()
+ {
+	 return size;
+ }
     /**
      * This method removes an entry from the
      * top of the stack.
@@ -43,7 +49,7 @@ public class MyGenericsStack<T extends Object> {
             throw new Exception("Stack is empty. Can not remove element.");
         }
         T entry = this.stackArr[top--];
-        System.out.println("Removed entry: "+entry);
+       
         return entry;
     }
      

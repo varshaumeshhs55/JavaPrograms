@@ -3,7 +3,7 @@ package com.bridgelabz.util;
 public class NewQueue<T> {
 	
 	    public NewNode<T> front,rear;
-	    public int size=0;
+	    public static int size=0;
 	   
 	    public NewQueue(){
 	        front=null;
@@ -15,7 +15,7 @@ public class NewQueue<T> {
 	        return front==null;
 	    }
 	   
-	    public int getSize(){
+	    public static int getSize(){
 	        return size;
 	    }
 	   

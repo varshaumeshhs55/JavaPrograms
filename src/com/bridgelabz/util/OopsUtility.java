@@ -29,7 +29,9 @@ static Scanner scanner=new Scanner(System.in); //scanner class declaration
 	 * @return boolean values that are read
 	 */
 	public static Float readFloat(){
-			return scanner.nextFloat();
+			return scanner.nextFloat();}
+			public static Long readLong() {
+				return scanner.nextLong();
 	}
 	
         
@@ -164,5 +166,39 @@ public static String modifiedMessage(String name,String fullname,String mobileno
         bw.write(json);
         bw.flush();
     }
+public static NewQueue<NewQueue<String>> deckQueueStore(String[] deck )
+{
+	NewQueue<NewQueue<String>> mainQueue = new NewQueue<NewQueue<String>>();
+	NewQueue<String> queueLinkedList = new NewQueue<String>();
+    System.out.println("Total numver of deck of cards are " + deck.length);
+    for (int i = 0; i < 4; i++) {
+        String[] demo = new String[9];
+        for (int j = 0; j < 9; j++) {
+            demo[j] = deck[i + j * 4];
+        }
+        String[] str2 = AlgorithmUtility.sort1(demo);
+        for (int k = 0; k < str2.length; k++) {
+            queueLinkedList.enqueue(str2[k]);
+        }
+        mainQueue.enqueue(queueLinkedList);
+        queueLinkedList = new NewQueue<String>();
+        continue;
+    }
+    return mainQueue;
 }
-	
+public static void displayDeck(NewQueue<NewQueue<String>> mainQueue)
+{
+	System.out.println(mainQueue.getSize());
+    for (int i = 0; i < mainQueue.getSize(); i++) 
+    {System.out.println("hai");
+    	NewQueue<String> queue2 = mainQueue.dequeue();
+        System.out.println("---------------------------------------- Person " + (i + 1)
+                + " -------------------------------------------");
+        for (int j = 0; j < queue2.getSize(); j++) {
+            System.out.print(queue2.dequeue() + " ");
+        }
+        System.out.println();
+    }}}
+
+
+

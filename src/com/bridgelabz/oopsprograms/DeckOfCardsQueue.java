@@ -22,7 +22,6 @@ public class DeckOfCardsQueue {
 	            deck[i] = temp;
 	        }
 	        NewQueue<NewQueue<String>> newqueue=OopsUtility.deckQueueStore(deck);
-	        System.out.println("hai");
 	        OopsUtility.displayDeck(newqueue);
 	    }
 	}

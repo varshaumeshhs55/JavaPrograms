@@ -1,13 +1,12 @@
 package com.bridgelabz.oopsprograms;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Appointment {
 	
 	private String docName;
-	List<Patients> lop=new ArrayList<Patients>();
+	List<Patients> liOfPatients=new ArrayList<Patients>();
 	public String getDocName() {
 		return docName;
 	}
@@ -18,11 +17,11 @@ public class Appointment {
 
 	
 	public List<Patients> getListOfPatients() {
-		return lop;
+		return liOfPatients;
 	}
 	
 	public void setListOfPatients(List<Patients> lop) {
-		this.lop = lop;
+		this.liOfPatients = lop;
 	}
 	
 

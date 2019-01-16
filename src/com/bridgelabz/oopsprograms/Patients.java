@@ -1,7 +1,5 @@
 package com.bridgelabz.oopsprograms;
 
-import com.bridgelabz.util.OopsUtility;
-
 public class Patients {
 	private int pid;
 	private String pname;
@@ -32,25 +30,5 @@ public class Patients {
 		this.mobno = mobno;
 	}
 	
-	
+}
 
-public void addPatient() {
-	Patients patients = new Patients();
-	System.out.println("Enter Your Details ...");
-
-	System.out.println("Enter Name: ");
-	patients.setPname(OopsUtility.readString());
-	System.out.println();
-
-	System.out.println("Enter Id: ");
-	patients.setPid(OopsUtility.readInteger());
-	System.out.println();
-
-	System.out.println("Enter Age: ");
-	patients.setAge(OopsUtility.readInteger());
-	System.out.println();
-
-	System.out.println("Enter Mobile Number: ");
-	patients.setMobno(OopsUtility.readString());
-	System.out.println();
-}}

@@ -10,9 +10,9 @@ import org.codehaus.jackson.map.JsonMappingException;
 
 public class StockPortfolio {
 
-	static List<Stock> liOfStock = new ArrayList<Stock>();
+	public static List<Stock> liOfStock = new ArrayList<Stock>();
     static Stock stock = new Stock();
-    static final String str ="/home/admin1/Documents/Programs/Stock.json";
+    public static final String str ="/home/admin1/Documents/Programs/Stock.json";
 
     public static void addStock() throws JsonGenerationException, JsonMappingException, IOException {
         String string = OopsUtility.readFile(str);

@@ -46,8 +46,8 @@ public class AddressBook {
 	        int flag = 0;
 	        for (Person per : liOfPerson) {
 	            if (fName.equals(per.getfName()) && lName.equals(per.getlName())) {
-	                boolean run = true;
-	                while (run == true) {
+	               int c=0;
+	               do{
 	                    System.out.println("Whate do you want to edit");
 	                    System.out.println("1.Phone Number 2.Address 3.Go Back");
 	                    int choice1 = OopsUtility.readInteger();
@@ -56,55 +56,55 @@ public class AddressBook {
 	                        System.out.println("Enter the phone number which has to be edited");
 	                        per.setPhNumber(OopsUtility.readLong());
 	                        System.out.println("Phone number updated");
-	                        run = true;
+	                        
 	                        break;
 	                    case 2:
 	                        System.out.println("Editing address now");
 	                        Address add = per.getAddress();
-	                        boolean run2 = true;
-	                        while (run2 == true) {
+	                       int c1=0;
+	                        do{
 	                            System.out.println("1.Street\n2.City\n3.State\n4.Zip Code\n5.To go back");
 	                            int choice2 = OopsUtility.readInteger();
 	                            switch (choice2) {
 	                            case 1:
 	                                System.out.println("Enter street which has to be edited");
 	                                add.setStreet(OopsUtility.readString());
-	                                run2 = true;
+	                        
 	                                break;
 	                            case 2:
 	                                System.out.println("Enter city which has to be edited");
 	                                add.setCity(OopsUtility.readString());
-	                                run2 = true;
+	                               
 	                                break;
 	                            case 3:
 	                                System.out.println("Enter state which has to be edited");
 	                                add.setState(OopsUtility.readString());
-	                                run2 = true;
+	                                
 	                                break;
 	                            case 4:
 	                                System.out.println("Enter Zip code which has to be edited");
 	                                add.setZipCode(OopsUtility.readLong());
-	                                run2 = true;
+	                              
 	                                break;
 	                            case 5:
-	                                run2 = false;
+	                               
 	                            default:
 	                                System.out.println("Please select correct choice");
 	                                break;
 	                            }
-	                        }
+	                        }while(c1<=20);
 	                        per.setAddress(add);
-	                        run = true;
+	                       
 	                        break;
 	                    case 3:
-	                        run = false;
+	                       
 	                        break;
 	                    default:
 	                        System.out.println("Please select correct choice");
-	                        run = true;
+	                     
 	                        break;
 	                    }
-	                }
+	                }while(c<=20);
 	            }
 	            flag = 1;
 	        }

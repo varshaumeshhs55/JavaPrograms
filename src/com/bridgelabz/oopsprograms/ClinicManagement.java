@@ -199,9 +199,9 @@ public class ClinicManagement {
 							System.out.println("Invalid choice");
 							break;
 						}
-					} while (ch2 < 5);
+					} while (ch2 < 5);break;
 
-				case 7:takeAppointment(); 
+				case 7:takeAppointment(); break;
 				case 8:
 					System.exit(0);				
 					default:System.out.println("Invalid choice");
@@ -332,6 +332,8 @@ public class ClinicManagement {
 	public static void searchDoc(List<Doctor> doctorList, Patients patient) {
 		System.out.println("Enter id");
 		int id = OopsUtility.readInteger();
+		
+		 
 		try {
 			//System.out.println(doctorList);
 			for (Doctor doctor : doctorList) {
@@ -349,7 +351,8 @@ public class ClinicManagement {
 										"Appointment is full !!! Please wait for the next schedule or Select different doctor");
 
 							}
-							break;
+						
+						
 						} else {
 							Appointment newAppointment = new Appointment();
 							newAppointment.setDocName(doctor.getDname());
@@ -376,8 +379,7 @@ public class ClinicManagement {
 
 		} catch (Exception e) {
 			System.out.println("Enter the correct id");
-		}
-}
+		}}
 
 public static void appoint(Patients patient) throws IOException {
 

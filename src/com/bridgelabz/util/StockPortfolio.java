@@ -1,6 +1,5 @@
 package com.bridgelabz.util;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,7 @@ public class StockPortfolio {
 
 	public static List<Stock> liOfStock = new ArrayList<Stock>();
     static Stock stock = new Stock();
-    public static final String str ="/home/admin1/Documents/Programs/Stock.json";
+    public static final String str ="/home/admin1/Documents/Programs/JavaPrograms/Stock.json";
 
     public static void addStock() throws JsonGenerationException, JsonMappingException, IOException {
         String string = OopsUtility.readFile(str);
@@ -37,7 +36,7 @@ public class StockPortfolio {
         OopsUtility.writeFile(json, str);
     }
 
-    public static void displayStock() throws FileNotFoundException {
+    public static void displayStock() throws IOException {
         String string = OopsUtility.readFile(str);
         try {
             liOfStock = OopsUtility.userReadValue(string, Stock.class);
@@ -52,7 +51,7 @@ public class StockPortfolio {
         }
     }
 
-    public static void valueOfEachStock() throws FileNotFoundException {
+    public static void valueOfEachStock() throws IOException {
         String string = OopsUtility.readFile(str);
         try {
             liOfStock = OopsUtility.userReadValue(string, Stock.class);
@@ -66,7 +65,7 @@ public class StockPortfolio {
         }
     }
 
-    public static void totalStockValue() throws FileNotFoundException {
+    public static void totalStockValue() throws IOException {
         String string = OopsUtility.readFile(str);
         try {
             liOfStock = OopsUtility.userReadValue(string, Stock.class);

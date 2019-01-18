@@ -1,23 +1,18 @@
 package com.bridgelabz.util;
 
-public class StockPerPerson {
+public class StockCustomer{
 	private String StockNames;
 	private int NumberOfShare;
 	private double SharePrice;
 	private Transactions transactions;
 
-	public StockPerPerson() {
-		 StockNames = null;
-		 NumberOfShare = 0;
-		 SharePrice = 0.0;
-		transactions = null;
-	}
+
 
 	public String getStockNames() {
 		return StockNames;
 	}
 
-	public void setStockNames(String stockNames) {
+	public  void setStockNames(String stockNames) {
 		StockNames = stockNames;
 	}
 
@@ -43,5 +38,5 @@ public class StockPerPerson {
 
 	public void setTransactions(Transactions transactions) {
 		this.transactions = transactions;
-	}
-}
+	}}
+	

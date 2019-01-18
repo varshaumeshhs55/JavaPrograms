@@ -282,4 +282,21 @@ public static boolean readBoolean(){
 //method for scanner class of String type
 public static String readString() {
                 return scanner.next();}
+
+
+public void getLinkedList() {
+	NewNode<T> tmp=first;
+	while(true)
+	{
+		if(tmp==null)
+		{
+			break;
+		}
+		if(tmp.getValue()!=null)
+			{
+			System.out.println(tmp.getValue()+"\t\t\t");
+			}
+		tmp=tmp.getNextRef();
+		}
+	}
 }

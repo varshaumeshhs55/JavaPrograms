@@ -2,11 +2,12 @@ package com.bridgelabz.util;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,9 +22,6 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.type.CollectionType;
 
 import com.bridgelabz.oopsprograms.Appointment;
-import com.bridgelabz.oopsprograms.Doctor;
-import com.bridgelabz.oopsprograms.Patients;
-import com.bridgelabz.oopsprograms.Search;
 
 public class OopsUtility {
 	static List<Appointment> listofappointments = new ArrayList<Appointment>();
@@ -59,20 +57,17 @@ public class OopsUtility {
 		return scanner.next();
 	}
 
-	public static String readFile(String message) throws FileNotFoundException {
+	public static String readFile(String message) throws IOException {
 		FileReader f = new FileReader(message);
-		@SuppressWarnings("resource")
 		BufferedReader read = new BufferedReader(f);
 		String line = "";
-		try {
 			String word = "";
 			while ((word = read.readLine()) != null) {
 				line = word;
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+			read.close();
 		return line;
+		
 	}
 //Regex
 
@@ -173,12 +168,12 @@ public class OopsUtility {
 		}
 	}
 
-	public static void writeFile(String json, String fileName) throws IOException {
-		FileWriter fw = new FileWriter(fileName);
-		BufferedWriter bw = new BufferedWriter(fw);
-		bw.write(json);
-		bw.flush();
-	}
+//	public static void writeFile(String json, String fileName) throws IOException {
+//		FileWriter fw = new FileWriter(fileName);
+//		BufferedWriter bw = new BufferedWriter(fw);
+//		bw.write(json);
+//		bw.flush();
+//	}
 
 //public static NewQueue<NewQueue<String>> deckQueueStore(String[] deck )
 //{
@@ -258,6 +253,36 @@ public class OopsUtility {
 			throws JsonGenerationException, JsonMappingException, IOException {
 		return objectMapper.writeValueAsString(list);
 	}
+
+
+
+
+
+
+public static String getDate() {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        String date = dtf.format(now);
+        return date;
+    }
+public static String readJsonFile(String filename) throws IOException {
+    FileReader fr = new FileReader("/home/admin1/Documents/Programs/JavaPrograms/varsha.json");
+    BufferedReader br = new BufferedReader(fr);
+    String str = "";
+    String line = "";
+    while ((line = br.readLine()) != null) {
+        str += line;
+    }
+    br.close();
+    return str;
 }
 
+public static void writeFile(String json, String filename) throws IOException {
+    FileWriter fw = new FileWriter(filename);
+    BufferedWriter bw = new BufferedWriter(fw);
+    bw.write(json);
+    bw.close();
+}
+
+}
 

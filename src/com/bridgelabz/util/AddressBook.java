@@ -19,7 +19,7 @@ public class AddressBook {
 	        person.setPhNumber(OopsUtility.readLong());
 	        Address address = new Address();
 	        System.out.println("Enter street");
-	        address.setState(OopsUtility.readString());
+	        address.setStreet(OopsUtility.readString());
 	        System.out.println("Enter city");
 	        address.setCity(OopsUtility.readString());
 	        System.out.println("Enter state");

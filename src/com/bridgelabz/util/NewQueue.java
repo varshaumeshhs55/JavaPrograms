@@ -15,7 +15,7 @@ public class NewQueue<T> {
 	        return front==null;
 	    }
 	   
-	    public static int getSize(){
+	    public int getSize(){
 	        return size;
 	    }
 	   

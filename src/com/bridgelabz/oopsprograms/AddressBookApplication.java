@@ -10,7 +10,7 @@ public class AddressBookApplication {
 	    public static void main(String[] args) throws IOException {
 
 	        AddressBookManager addressBookApplication = new AddressBookManager();
-	  int c=0;
+	 
 	  do
 	      {
 	            System.out.println("1.Create Book 2.Open Book 3.Save Book 4.Save As Book 5.Close Book 6.exit");
@@ -43,7 +43,7 @@ public class AddressBookApplication {
 	            default:
 	                System.out.println("Please select correct choice");
 	            }
-	        }while(c<=20);
+	        }while(addressBookApplication!=null);
 
 	    }}
 	

@@ -15,9 +15,9 @@ public class Regex {
 	            String lastname=OopsUtility.readString();
 	            String fullname=firstname + lastname;
 	            System.out.println("Enter the mobile number");
-	            String mobileno=OopsUtility.readString();
+	            String mobileNo=OopsUtility.readString();
 	            String date=OopsUtility.currentDate();
-	          String modifiedmsg=OopsUtility.modifiedMessage(firstname,fullname,mobileno,date,Message);
+	          String modifiedmsg=OopsUtility.modifiedMessage(firstname,fullname,mobileNo,date,Message);
 	          System.out.println( modifiedmsg);
 	}}
 

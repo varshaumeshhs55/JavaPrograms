@@ -18,14 +18,14 @@ public class StockCompanyApplication {
                    
                     //Method 1- using non-static function of StockAccount class
                     //of com.bridgelabz.oops package
-                  Nikitha.creatAccount();
+                  StockAccount.creatAccount();
                   
                     break;
                 case 2:
                    
                     //Method 2- using non-static function of StockAccount class
                     //of com.bridgelabz.oops package
-                    Nikitha.openAccount();
+                    StockAccount.openAccount();
                    
                    
                     break;

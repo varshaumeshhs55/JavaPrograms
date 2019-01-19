@@ -71,29 +71,29 @@ public class OopsUtility {
 	}
 //Regex
 
-	public static String modifiedMessage(String name, String fullname, String mobileno, String date, String Message) {
+	public static String modifiedMessage(String name, String fullName, String mobileNo, String date, String message) {
 		final String Regex_1 = "<{2}name>{2}";
 		final String Regex_2 = "<{2}fullname>{2}";
 		final String Regex_3 = "<{2}x{10}>{2}";
 		final String Regex_4 = "\\d{2}+/+\\d{2}+/+\\d{4}";
 
 		Pattern p = Pattern.compile(Regex_1);
-		Matcher m = p.matcher(Message);
-		Message = m.replaceAll(name);
+		Matcher m = p.matcher(message);
+		message = m.replaceAll(name);
 
 		Pattern p1 = Pattern.compile(Regex_2);
-		Matcher m1 = p1.matcher(Message);
-		Message = m1.replaceAll(fullname);
+		Matcher m1 = p1.matcher(message);
+		message = m1.replaceAll(fullName);
 
 		Pattern p2 = Pattern.compile(Regex_3);
-		Matcher m2 = p2.matcher(Message);
-		Message = m2.replaceAll(mobileno);
+		Matcher m2 = p2.matcher(message);
+		message = m2.replaceAll(mobileNo);
 
 		Pattern p3 = Pattern.compile(Regex_4);
-		Matcher m3 = p3.matcher(Message);
-		Message = m3.replaceAll(date);
+		Matcher m3 = p3.matcher(message);
+		message = m3.replaceAll(date);
 
-		return Message;
+		return message;
 	}
 
 	public static String currentDate() {

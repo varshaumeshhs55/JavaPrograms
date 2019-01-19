@@ -1,7 +1,5 @@
 package com.bridgelabz.oopsprograms;
 
-import com.bridgelabz.util.OopsUtility;
-
 public class Doctor {
 private	int did;
 private	String dname;

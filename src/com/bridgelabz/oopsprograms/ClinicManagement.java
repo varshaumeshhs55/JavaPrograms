@@ -351,8 +351,8 @@ public class ClinicManagement {
 									}
 									else
 									{
-										patientAppointmentList.add(patient);
-										appointment.setListOfPatients(patientAppointmentList);
+//						patientAppointmentList.add(patient);
+								appointment.setListOfPatients(patientAppointmentList);
 										System.out.println("Appointment is set");
 										flag = 1;
 										break;
@@ -378,7 +378,7 @@ public class ClinicManagement {
 //
 //						}
 					}
-//					if (listofappointments.size() == 0) 
+//				if (listofappointments.size() == 0) 
 					if (flag == 0) {
 						Appointment appointment2 = new Appointment();
 						List<Patients> patientList1 = new ArrayList<Patients>();
@@ -388,7 +388,6 @@ public class ClinicManagement {
 						listofappointments.add(appointment2);
 						System.out.println("Appointment is set");
 					}
-
 				}
 			}
 
